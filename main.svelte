@@ -105,9 +105,13 @@ import OLSKResults from 'OLSKResults';
 
 <header class="OLSKMasterListToolbar OLSKMobileViewHeader">
 	<OLSKToolbar>
+		<slot name="OLSKMasterListToolbarHead"></slot>
+
 		<OLSKInputWrapper OLSKInputWrapperValue={ OLSKMasterListFilterText } OLSKInputWrapperDispatchClear={ mod.OLSKInputWrapperDispatchClear } >
 			<input class="OLSKMasterListFilterField" placeholder={ OLSKLocalized('OLSKMasterListFilterFieldText') } bind:value={ OLSKMasterListFilterText } on:input={ mod.InterfaceFilterFieldDidInput } />
 		</OLSKInputWrapper>
+		
+		<slot name="OLSKMasterListToolbarTail"></slot>
 	</OLSKToolbar>
 </header>
 

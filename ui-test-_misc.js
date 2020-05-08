@@ -115,6 +115,14 @@ describe('OLSKMasterList_Misc', function () {
 		it('classes OLSKMobileViewHeader', function () {
 			browser.assert.hasClass(OLSKMasterListToolbar, 'OLSKMobileViewHeader');
 		});
+
+		it('binds OLSKMasterListToolbarHead', function () {
+			browser.assert.text('.OLSKMasterListToolbar #TestOLSKMasterListToolbarHead', 'TestOLSKMasterListToolbarHead');
+		});
+
+		it('binds OLSKMasterListToolbarTail', function () {
+			browser.assert.text('.OLSKMasterListToolbar #TestOLSKMasterListToolbarTail', 'TestOLSKMasterListToolbarTail');
+		});
 	
 	});
 
