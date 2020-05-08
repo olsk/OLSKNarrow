@@ -117,9 +117,11 @@ import OLSKResults from 'OLSKResults';
 		OLSKResultsListItemSelected={ OLSKMasterListItemSelected }
 		OLSKResultsDispatchClick={ OLSKMasterListDispatchClick }
 		OLSKResultsDispatchArrow={ (inputData) => mod.DataIsFocused() && OLSKMasterListDispatchArrow(inputData) }
-		let:OLSKResultsListItem={ e }
+		let:OLSKResultsListItem={ item }
 		>
-		<div class="OLSKMasterListItem" aria-label={ OLSKMasterListItemAccessibilitySummaryFor(e) } role="button"></div>
+		<div class="OLSKMasterListItem" aria-label={ OLSKMasterListItemAccessibilitySummaryFor(item) } role="button">
+			<slot OLSKResultsListItem={ item }></slot>
+		</div>
 	</OLSKResults>
 </section>
 

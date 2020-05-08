@@ -183,15 +183,16 @@ describe('OLSKMasterList_Misc', function () {
 			});
 		});
 
-		it('sets OLSKMasterListItemAccessibilitySummary', function () {
-		});
-
 		it('sets aria-label', function () {
 			browser.assert.attribute('.OLSKMasterListItem', 'aria-label', uItem().TestObjectID.repeat(2));
 		});
 		
 		it('sets role', function () {
 			browser.assert.attribute('.OLSKMasterListItem', 'role', 'button');
+		});
+		
+		it('sets OLSKResultsListItem', function () {
+			browser.assert.text('.OLSKResultsListItem .TestListItem', uItem().TestObjectID.repeat(3));
 		});
 
 		context('click', function () {
