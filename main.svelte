@@ -7,6 +7,7 @@ export let OLSKMasterListDispatchClick;
 export let OLSKMasterListDispatchArrow;
 export let OLSKMasterListDispatchFilter;
 export let OLSKMobileViewInactive = false;
+export let OLSKMasterListClass = '';
 
 import OLSKInternational from 'OLSKInternational';
 const OLSKLocalized = function(translationConstant) {
@@ -101,7 +102,7 @@ import OLSKInputWrapper from 'OLSKInputWrapper';
 import OLSKResults from 'OLSKResults';
 </script>
 
-<div class="OLSKMasterList OLSKViewportMaster" class:OLSKMobileViewInactive={ OLSKMobileViewInactive } class:OLSKMasterListFocused={ mod._ValueFilterFieldFocused } aria-hidden={ OLSKMobileViewInactive ? true : null }>
+<div class="OLSKMasterList OLSKViewportMaster { OLSKMasterListClass }" class:OLSKMobileViewInactive={ OLSKMobileViewInactive } class:OLSKMasterListFocused={ mod._ValueFilterFieldFocused } aria-hidden={ OLSKMobileViewInactive ? true : null }>
 
 <header class="OLSKMasterListToolbar OLSKMobileViewHeader">
 	<OLSKToolbar>

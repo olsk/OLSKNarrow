@@ -17,6 +17,10 @@ describe('OLSKMasterList_Misc', function () {
 		it('classes OLSKViewportMaster', function () {
 			browser.assert.hasClass(OLSKMasterList, 'OLSKViewportMaster');
 		});
+		
+		it('classes OLSKMasterListClass', function () {
+			browser.assert.hasClass(OLSKMasterList, 'TestClass');
+		});
 
 		context('focus OLSKMasterListFilterField', function() {
 
