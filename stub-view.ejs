@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/_shared/__external/normalize.css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="/<%= OLSKSharedPageControllerSlug %>/__compiled/ui-style.css">
+
+	<script type="text/javascript">
+		window.OLSKPublicConstants = function (inputData) {
+			return <%- JSON.stringify({
+				OLSKSharedPageCurrentLanguage,
+			}) %>[inputData];
+		};
+	</script>
+</head>
+<body>
+
+<script src="/<%= OLSKSharedPageControllerSlug %>/__compiled/ui-behaviour.js"></script>
+
+<p>
+	<strong>TestOLSKMasterListDispatchArrow</strong>
+	<span id="TestOLSKMasterListDispatchArrow">0</span>
+	<span id="TestOLSKMasterListDispatchArrowData">undefined</span>
+</p>
+
+<p>
+	<strong>TestOLSKMasterListDispatchClick</strong>
+	<span id="TestOLSKMasterListDispatchClick">0</span>
+	<span id="TestOLSKMasterListDispatchClickData">undefined</span>
+</p>
+
+<p>
+	<strong>TestOLSKMasterListDispatchFilter</strong>
+	<span id="TestOLSKMasterListDispatchFilter">0</span>
+	<span id="TestOLSKMasterListDispatchFilterData">undefined</span>
+</p>
+
+<input id="TestInputAlternative" />
+
+</body>
+</html>
