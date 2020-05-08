@@ -1,0 +1,16 @@
+{
+  "name": "OLSKAppToolbar",
+  "main": "main.svelte",
+  "dependencies": {
+    "// TOOLBAR": null,
+    "OLSKToolbar": "olsk/OLSKToolbar",
+
+    "// INPUT WRAPPER": null,
+    "OLSKInputWrapper": "olsk/OLSKInputWrapper",
+
+    "// RESULTS": null,
+    "OLSKResults": "olsk/OLSKResults",
+    
+    "// I sacrifice myself for the commas of others": null
+  }
+}
