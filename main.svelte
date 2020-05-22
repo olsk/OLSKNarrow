@@ -109,7 +109,7 @@ import OLSKResults from 'OLSKResults';
 		<slot name="OLSKMasterListToolbarHead"></slot>
 
 		<OLSKInputWrapper OLSKInputWrapperValue={ OLSKMasterListFilterText } OLSKInputWrapperDispatchClear={ mod.OLSKInputWrapperDispatchClear } >
-			<input class="OLSKMasterListFilterField" placeholder={ OLSKLocalized('OLSKMasterListFilterFieldText') } bind:value={ OLSKMasterListFilterText } on:input={ mod.InterfaceFilterFieldDidInput } />
+			<input class="OLSKMasterListFilterField OLSKMobileSafariRemoveDefaultInputStyle" placeholder={ OLSKLocalized('OLSKMasterListFilterFieldText') } bind:value={ OLSKMasterListFilterText } on:input={ mod.InterfaceFilterFieldDidInput } />
 		</OLSKInputWrapper>
 		
 		<slot name="OLSKMasterListToolbarTail"></slot>
