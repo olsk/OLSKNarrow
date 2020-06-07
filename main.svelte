@@ -97,23 +97,20 @@ onMount(mod.LifecycleComponentDidMount);
 import { afterUpdate } from 'svelte';
 afterUpdate(mod.LifecycleComponentDidUpdate);
 
-import OLSKToolbar from 'OLSKToolbar';
 import OLSKInputWrapper from 'OLSKInputWrapper';
 import OLSKResults from 'OLSKResults';
 </script>
 
 <div class="OLSKMasterList OLSKViewportMaster { OLSKMasterListClass }" class:OLSKMobileViewInactive={ OLSKMobileViewInactive } class:OLSKMasterListFocused={ mod._ValueFilterFieldFocused } aria-hidden={ OLSKMobileViewInactive ? true : null }>
 
-<header class="OLSKMasterListToolbar OLSKMobileViewHeader">
-	<OLSKToolbar>
-		<slot name="OLSKMasterListToolbarHead"></slot>
+<header class="OLSKMasterListToolbar OLSKMobileViewHeader OLSKToolbar">
+	<slot name="OLSKMasterListToolbarHead"></slot>
 
-		<OLSKInputWrapper OLSKInputWrapperValue={ OLSKMasterListFilterText } OLSKInputWrapperDispatchClear={ mod.OLSKInputWrapperDispatchClear } >
-			<input class="OLSKMasterListFilterField OLSKMobileSafariRemoveDefaultInputStyle" placeholder={ OLSKLocalized('OLSKMasterListFilterFieldText') } bind:value={ OLSKMasterListFilterText } on:input={ mod.InterfaceFilterFieldDidInput } />
-		</OLSKInputWrapper>
-		
-		<slot name="OLSKMasterListToolbarTail"></slot>
-	</OLSKToolbar>
+	<OLSKInputWrapper OLSKInputWrapperValue={ OLSKMasterListFilterText } OLSKInputWrapperDispatchClear={ mod.OLSKInputWrapperDispatchClear } >
+		<input class="OLSKMasterListFilterField OLSKMobileSafariRemoveDefaultInputStyle" placeholder={ OLSKLocalized('OLSKMasterListFilterFieldText') } bind:value={ OLSKMasterListFilterText } on:input={ mod.InterfaceFilterFieldDidInput } />
+	</OLSKInputWrapper>
+	
+	<slot name="OLSKMasterListToolbarTail"></slot>
 </header>
 
 <section class="OLSKMasterListBody OLSKMobileViewBody">

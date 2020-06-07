@@ -120,6 +120,10 @@ describe('OLSKMasterList_Misc', function () {
 			browser.assert.hasClass(OLSKMasterListToolbar, 'OLSKMobileViewHeader');
 		});
 
+		it('classes OLSKToolbar', function () {
+			browser.assert.hasClass(OLSKMasterListToolbar, 'OLSKToolbar');
+		});
+
 		it('binds OLSKMasterListToolbarHead', function () {
 			browser.assert.text('.OLSKMasterListToolbar #TestOLSKMasterListToolbarHead', 'TestOLSKMasterListToolbarHead');
 		});
