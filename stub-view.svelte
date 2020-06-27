@@ -37,7 +37,7 @@ import Module from './main.svelte';
 <Module
 	{ ...inputData }
 	let:OLSKResultsListItem={ item }
-	OLSKMasterListClass={ 'TestClass' }
+	OLSKMasterListClass={ 'TestListClass' }
 	>
 	<em slot="OLSKMasterListToolbarHead" id="TestOLSKMasterListToolbarHead">TestOLSKMasterListToolbarHead</em>
 	<em slot="OLSKMasterListToolbarTail" id="TestOLSKMasterListToolbarTail">TestOLSKMasterListToolbarTail</em>

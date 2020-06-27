@@ -19,7 +19,7 @@ describe('OLSKMasterList_Misc', function () {
 		});
 		
 		it('classes OLSKMasterListClass', function () {
-			browser.assert.hasClass(OLSKMasterList, 'TestClass');
+			browser.assert.hasClass(OLSKMasterList, 'TestListClass');
 		});
 
 		context('focus OLSKMasterListFilterField', function() {
