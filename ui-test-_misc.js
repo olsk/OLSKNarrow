@@ -11,7 +11,9 @@ describe('OLSKMasterList_Misc', function () {
 	describe('OLSKMasterList', function test_OLSKMasterList () {
 
 		before(function() {
-			return browser.OLSKVisit(kDefaultRoute);
+			return browser.OLSKVisit(kDefaultRoute, {
+				OLSKMasterListClass: 'alfa',
+			});
 		});
 		
 		it('classes OLSKViewportMaster', function () {
@@ -19,7 +21,7 @@ describe('OLSKMasterList_Misc', function () {
 		});
 		
 		it('classes OLSKMasterListClass', function () {
-			browser.assert.hasClass(OLSKMasterList, 'TestListClass');
+			browser.assert.hasClass(OLSKMasterList, 'alfa');
 		});
 
 		context('focus OLSKMasterListFilterField', function() {
@@ -200,6 +202,7 @@ describe('OLSKMasterList_Misc', function () {
 		before(function() {
 			return browser.OLSKVisit(kDefaultRoute, {
 				OLSKMasterListItems: JSON.stringify([uItem()]),
+				OLSKMasterItemClass: 'alfa',
 			});
 		});
 
@@ -213,6 +216,10 @@ describe('OLSKMasterList_Misc', function () {
 		
 		it('sets OLSKResultsListItem', function () {
 			browser.assert.text('.OLSKResultsListItem .TestListItemChild', uItem().TestObjectID.repeat(3));
+		});
+		
+		it('classes OLSKMasterItemClass', function () {
+			browser.assert.hasClass(OLSKMasterListItem, 'alfa');
 		});
 
 		context('click', function () {

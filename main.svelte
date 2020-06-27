@@ -8,6 +8,7 @@ export let OLSKMasterListDispatchArrow;
 export let OLSKMasterListDispatchFilter;
 export let OLSKMobileViewInactive = false;
 export let OLSKMasterListClass = '';
+export let OLSKMasterItemClass = '';
 
 import OLSKInternational from 'OLSKInternational';
 const OLSKLocalized = function(translationConstant) {
@@ -121,7 +122,7 @@ import OLSKResults from 'OLSKResults';
 		OLSKResultsDispatchArrow={ (inputData) => mod.DataIsFocused() && OLSKMasterListDispatchArrow(inputData) }
 		let:OLSKResultsListItem={ item }
 		>
-		<div class="OLSKMasterListItem" aria-label={ OLSKMasterListItemAccessibilitySummaryFor(item) } role="button">
+		<div class="OLSKMasterListItem { OLSKMasterItemClass }" aria-label={ OLSKMasterListItemAccessibilitySummaryFor(item) } role="button">
 			<slot OLSKResultsListItem={ item }></slot>
 		</div>
 	</OLSKResults>
