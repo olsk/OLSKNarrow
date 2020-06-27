@@ -9,8 +9,6 @@ const uItem = function (inputData = 'alfa') {
 Object.entries({
 	OLSKMasterList: '.OLSKMasterList',
 	
-	OLSKMasterList: '.OLSKMasterList',
-	
 	OLSKMasterListToolbar: '.OLSKMasterListToolbar',
 	
 	OLSKMasterListFilterField: '.OLSKMasterListFilterField',
