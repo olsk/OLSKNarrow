@@ -92,7 +92,7 @@ describe('OLSKMasterList_Misc', function () {
 			context('keydown ArrowUp', function() {
 
 				before(function () {
-					return browser.query('.OLSKMasterListFilterField').focus();
+					return browser.query(OLSKMasterListFilterField).focus();
 				});
 				
 				before(function () {
@@ -204,11 +204,11 @@ describe('OLSKMasterList_Misc', function () {
 		});
 
 		it('sets aria-label', function () {
-			browser.assert.attribute('.OLSKMasterListItem', 'aria-label', uItem().TestObjectID.repeat(2));
+			browser.assert.attribute(OLSKMasterListItem, 'aria-label', uItem().TestObjectID.repeat(2));
 		});
 		
 		it('sets role', function () {
-			browser.assert.attribute('.OLSKMasterListItem', 'role', 'button');
+			browser.assert.attribute(OLSKMasterListItem, 'role', 'button');
 		});
 		
 		it('sets OLSKResultsListItem', function () {
@@ -223,7 +223,7 @@ describe('OLSKMasterList_Misc', function () {
 			});
 			
 			before(function () {
-				return browser.click('.OLSKMasterListItem');
+				return browser.click(OLSKMasterListItem);
 			});
 
 			it('sends OLSKMasterListDispatchClick', function () {
