@@ -19,12 +19,6 @@ import { OLSK_TESTING_BEHAVIOUR } from 'OLSKTesting'
 
 const mod = {
 
-	// MESSAGE
-
-	OLSKInputWrapperDispatchClear () {
-		OLSKMasterListDispatchFilter('');
-	},
-
 	// VALUE
 
 	_ValueFilterFieldFocused: false,
@@ -43,6 +37,12 @@ const mod = {
 
 	InterfaceFilterFieldDidInput (event) {
 		OLSKMasterListDispatchFilter(this.value);
+	},
+
+	// MESSAGE
+
+	OLSKInputWrapperDispatchClear () {
+		OLSKMasterListDispatchFilter('');
 	},
 
 	// SETUP
