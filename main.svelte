@@ -9,6 +9,7 @@ export let OLSKMasterListDispatchFilter;
 export let OLSKMobileViewInactive = false;
 export let OLSKMasterListClass = '';
 export let OLSKMasterItemClass = '';
+export let OLSKResultsIgnoreKeyboard = false;
 
 import OLSKInternational from 'OLSKInternational';
 const OLSKLocalized = function(translationConstant) {
@@ -121,6 +122,7 @@ import OLSKResults from 'OLSKResults';
 		OLSKResultsDispatchClick={ OLSKMasterListDispatchClick }
 		OLSKResultsDispatchArrow={ (inputData) => mod.DataIsFocused() && OLSKMasterListDispatchArrow(inputData) }
 		let:OLSKResultsListItem={ item }
+		OLSKResultsIgnoreKeyboard={ OLSKResultsIgnoreKeyboard }
 		>
 		<div class="OLSKMasterListItem { OLSKMasterItemClass }" aria-label={ OLSKMasterListItemAccessibilitySummaryFor(item) } role="button">
 			<slot OLSKResultsListItem={ item }></slot>
