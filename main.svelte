@@ -128,6 +128,8 @@ import OLSKResults from 'OLSKResults';
 			<slot OLSKResultsListItem={ item }></slot>
 		</div>
 	</OLSKResults>
+
+	<slot name="OLSKMasterListBodyTail"></slot>
 </section>
 
 </div>

@@ -195,6 +195,10 @@ describe('OLSKMasterList_Misc', function () {
 			browser.assert.hasClass(OLSKMasterListBody, 'OLSKMobileViewBody');
 		});
 	
+		it('binds OLSKMasterListBodyTail', function () {
+			browser.assert.text('.OLSKMasterListBody #TestOLSKMasterListBodyTail', 'TestOLSKMasterListBodyTail');
+		});
+	
 	});
 
 	describe('OLSKMasterListItem', function test_OLSKMasterListItem() {
