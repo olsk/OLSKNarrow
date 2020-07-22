@@ -41,8 +41,8 @@ describe('OLSKMasterList_Access', function () {
 		browser.assert.elements('.OLSKInputWrapper', 1);
 	});
 
-	it('hides OLSKInputWrapperClearButton', function () {
-		browser.assert.elements('.OLSKInputWrapperClearButton', 0);
+	it('shows OLSKInputWrapper', function () {
+		browser.assert.elements('.OLSKInputWrapper', 1);
 	});
 
 	it('shows OLSKMasterListFilterField', function () {
@@ -59,20 +59,6 @@ describe('OLSKMasterList_Access', function () {
 
 	it('hides OLSKMasterListItem', function () {
 		browser.assert.elements(OLSKMasterListItem, 0);
-	});
-
-	describe('OLSKMasterListFilterText', function () {
-
-		before(function() {
-			return browser.OLSKVisit(kDefaultRoute, {
-				OLSKMasterListFilterText: 'alfa',
-			});
-		});
-
-		it('shows OLSKInputWrapperClearButton', function () {
-			browser.assert.elements('.OLSKInputWrapperClearButton', 1);
-		});
-
 	});
 
 	context('OLSKMasterListItems', function() {
@@ -93,13 +79,12 @@ describe('OLSKMasterList_Access', function () {
 		
 		before(function() {
 			return browser.OLSKVisit(kDefaultRoute, {
-				OLSKMasterListFilterText: 'alfa',
 				OLSKMasterListFilterFieldClearButton: false,
 			});
 		});
 
-		it('hides OLSKInputWrapperClearButton', function () {
-			browser.assert.elements('.OLSKInputWrapperClearButton', 0);
+		it('hides OLSKInputWrapper', function () {
+			browser.assert.elements('.OLSKInputWrapper', 0);
 		});
 		
 	});

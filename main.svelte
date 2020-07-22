@@ -116,10 +116,14 @@ import OLSKResults from 'OLSKResults';
 
 <header class="OLSKMasterListToolbar OLSKMobileViewHeader OLSKToolbar">
 	<slot name="OLSKMasterListToolbarHead"></slot>
-
-	<OLSKInputWrapper OLSKInputWrapperValue={ OLSKMasterListFilterFieldClearButton ? OLSKMasterListFilterText : '' } OLSKInputWrapperDispatchClear={ mod.OLSKInputWrapperDispatchClear } >
+	
+	{#if OLSKMasterListFilterFieldClearButton }
+		<OLSKInputWrapper OLSKInputWrapperValue={ OLSKMasterListFilterFieldClearButton ? OLSKMasterListFilterText : '' } OLSKInputWrapperDispatchClear={ mod.OLSKInputWrapperDispatchClear } >
+			<input class="OLSKMasterListFilterField OLSKMobileSafariRemoveDefaultInputStyle { OLSKMasterListFilterFieldClass }" placeholder={ OLSKMasterListFilterFieldPlaceholderText || OLSKLocalized('OLSKMasterListFilterFieldText') } autofocus={ OLSKMasterListFilterFieldAutofocus } bind:value={ OLSKMasterListFilterText } on:input={ mod.InterfaceFilterFieldDidInput } />
+		</OLSKInputWrapper>
+	{:else}
 		<input class="OLSKMasterListFilterField OLSKMobileSafariRemoveDefaultInputStyle { OLSKMasterListFilterFieldClass }" placeholder={ OLSKMasterListFilterFieldPlaceholderText || OLSKLocalized('OLSKMasterListFilterFieldText') } autofocus={ OLSKMasterListFilterFieldAutofocus } bind:value={ OLSKMasterListFilterText } on:input={ mod.InterfaceFilterFieldDidInput } />
-	</OLSKInputWrapper>
+	{/if}
 	
 	<slot name="OLSKMasterListToolbarTail"></slot>
 </header>
