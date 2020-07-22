@@ -142,6 +142,7 @@ describe('OLSKMasterList_Misc', function () {
 			return browser.OLSKVisit(kDefaultRoute, {
 				OLSKMasterListFilterText: 'alfa',
 				OLSKMasterListFilterFieldClass: 'bravo',
+				OLSKMasterListFilterFieldPlaceholderText: 'charlie',
 			});
 		});
 
@@ -159,6 +160,10 @@ describe('OLSKMasterList_Misc', function () {
 		
 		it('classes OLSKMasterListFilterFieldClass', function () {
 			browser.assert.hasClass(OLSKMasterListFilterField, 'bravo');
+		});
+
+		it('binds OLSKMasterListFilterFieldPlaceholderText', function () {
+			browser.assert.attribute(OLSKMasterListFilterField, 'placeholder', 'charlie');
 		});
 			
 		context('input', function () {
