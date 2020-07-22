@@ -41,6 +41,10 @@ describe('OLSKMasterList_Access', function () {
 		browser.assert.elements('.OLSKInputWrapper', 1);
 	});
 
+	it('hides OLSKInputWrapperClearButton', function () {
+		browser.assert.elements('.OLSKInputWrapperClearButton', 0);
+	});
+
 	it('shows OLSKMasterListFilterField', function () {
 		browser.assert.elements(OLSKMasterListFilterField, 1);
 	});
@@ -57,6 +61,20 @@ describe('OLSKMasterList_Access', function () {
 		browser.assert.elements(OLSKMasterListItem, 0);
 	});
 
+	describe('OLSKMasterListFilterText', function () {
+
+		before(function() {
+			return browser.OLSKVisit(kDefaultRoute, {
+				OLSKMasterListFilterText: 'alfa',
+			});
+		});
+
+		it('shows OLSKInputWrapperClearButton', function () {
+			browser.assert.elements('.OLSKInputWrapperClearButton', 1);
+		});
+
+	});
+
 	context('OLSKMasterListItems', function() {
 		
 		before(function() {
@@ -67,6 +85,21 @@ describe('OLSKMasterList_Access', function () {
 
 		it('shows OLSKMasterListItem', function () {
 			browser.assert.elements(OLSKMasterListItem, 1);
+		});
+		
+	});
+
+	context('OLSKMasterListFilterFieldClearButton', function() {
+		
+		before(function() {
+			return browser.OLSKVisit(kDefaultRoute, {
+				OLSKMasterListFilterText: 'alfa',
+				OLSKMasterListFilterFieldClearButton: false,
+			});
+		});
+
+		it('hides OLSKInputWrapperClearButton', function () {
+			browser.assert.elements('.OLSKInputWrapperClearButton', 0);
 		});
 		
 	});

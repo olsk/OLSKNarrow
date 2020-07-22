@@ -10,6 +10,7 @@ export let OLSKMobileViewInactive = false;
 export let OLSKMasterListClass = '';
 export let OLSKMasterListFilterFieldClass = '';
 export let OLSKMasterListFilterFieldPlaceholderText = '';
+export let OLSKMasterListFilterFieldClearButton = true;
 export let OLSKMasterItemClass = '';
 export let OLSKResultsIgnoreKeyboard = false;
 
@@ -110,7 +111,7 @@ import OLSKResults from 'OLSKResults';
 <header class="OLSKMasterListToolbar OLSKMobileViewHeader OLSKToolbar">
 	<slot name="OLSKMasterListToolbarHead"></slot>
 
-	<OLSKInputWrapper OLSKInputWrapperValue={ OLSKMasterListFilterText } OLSKInputWrapperDispatchClear={ mod.OLSKInputWrapperDispatchClear } >
+	<OLSKInputWrapper OLSKInputWrapperValue={ OLSKMasterListFilterFieldClearButton ? OLSKMasterListFilterText : '' } OLSKInputWrapperDispatchClear={ mod.OLSKInputWrapperDispatchClear } >
 		<input class="OLSKMasterListFilterField OLSKMobileSafariRemoveDefaultInputStyle { OLSKMasterListFilterFieldClass }" placeholder={ OLSKMasterListFilterFieldPlaceholderText || OLSKLocalized('OLSKMasterListFilterFieldText') } bind:value={ OLSKMasterListFilterText } on:input={ mod.InterfaceFilterFieldDidInput } />
 	</OLSKInputWrapper>
 	
