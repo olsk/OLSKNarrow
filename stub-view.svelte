@@ -18,7 +18,7 @@ const inputData = Object.assign({
 		window.TestOLSKMasterListDispatchFilterData.innerHTML = inputData;
 	}),
 }, Object.fromEntries(Array.from((new window.URLSearchParams(window.location.search)).entries()).map(function (e, index, coll) {
-	if (['OLSKMasterListItems', 'OLSKMasterListItemSelected', 'OLSKMasterListFilterFieldClearButton'].includes(e[0])) {
+	if (['OLSKMasterListItems', 'OLSKMasterListItemSelected', 'OLSKMasterListFilterFieldClearButton', 'OLSKMasterListFilterFieldAutofocus'].includes(e[0])) {
 		e[1] = JSON.parse(e[1]);
 	}
 

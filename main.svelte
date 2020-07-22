@@ -6,12 +6,18 @@ export let OLSKMasterListItemAccessibilitySummaryFor;
 export let OLSKMasterListDispatchClick;
 export let OLSKMasterListDispatchArrow;
 export let OLSKMasterListDispatchFilter;
+
 export let OLSKMobileViewInactive = false;
+
 export let OLSKMasterListClass = '';
+
 export let OLSKMasterListFilterFieldClass = '';
 export let OLSKMasterListFilterFieldPlaceholderText = '';
 export let OLSKMasterListFilterFieldClearButton = true;
+export let OLSKMasterListFilterFieldAutofocus = false;
+
 export let OLSKMasterItemClass = '';
+
 export let OLSKResultsIgnoreKeyboard = false;
 
 import OLSKInternational from 'OLSKInternational';
@@ -112,7 +118,7 @@ import OLSKResults from 'OLSKResults';
 	<slot name="OLSKMasterListToolbarHead"></slot>
 
 	<OLSKInputWrapper OLSKInputWrapperValue={ OLSKMasterListFilterFieldClearButton ? OLSKMasterListFilterText : '' } OLSKInputWrapperDispatchClear={ mod.OLSKInputWrapperDispatchClear } >
-		<input class="OLSKMasterListFilterField OLSKMobileSafariRemoveDefaultInputStyle { OLSKMasterListFilterFieldClass }" placeholder={ OLSKMasterListFilterFieldPlaceholderText || OLSKLocalized('OLSKMasterListFilterFieldText') } bind:value={ OLSKMasterListFilterText } on:input={ mod.InterfaceFilterFieldDidInput } />
+		<input class="OLSKMasterListFilterField OLSKMobileSafariRemoveDefaultInputStyle { OLSKMasterListFilterFieldClass }" placeholder={ OLSKMasterListFilterFieldPlaceholderText || OLSKLocalized('OLSKMasterListFilterFieldText') } autofocus={ OLSKMasterListFilterFieldAutofocus } bind:value={ OLSKMasterListFilterText } on:input={ mod.InterfaceFilterFieldDidInput } />
 	</OLSKInputWrapper>
 	
 	<slot name="OLSKMasterListToolbarTail"></slot>

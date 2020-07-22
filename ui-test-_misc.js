@@ -165,6 +165,10 @@ describe('OLSKMasterList_Misc', function () {
 		it('binds OLSKMasterListFilterFieldPlaceholderText', function () {
 			browser.assert.attribute(OLSKMasterListFilterField, 'placeholder', 'charlie');
 		});
+
+		it('sets autofocus', function () {
+			browser.assert.attribute(OLSKMasterListFilterField, 'autofocus', null);
+		});
 			
 		context('input', function () {
 		
@@ -195,6 +199,20 @@ describe('OLSKMasterList_Misc', function () {
 				browser.assert.text('#TestOLSKMasterListDispatchFilterData', '');
 			});
 		
+		});
+
+		context('OLSKMasterListFilterFieldAutofocus', function () {
+
+			before(function() {
+				return browser.OLSKVisit(kDefaultRoute, {
+					OLSKMasterListFilterFieldAutofocus: true,
+				});
+			});
+
+			it('sets autofocus', function () {
+				browser.assert.attribute(OLSKMasterListFilterField, 'autofocus', '');
+			});
+
 		});
 
 	});
