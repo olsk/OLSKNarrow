@@ -135,5 +135,3 @@ import OLSKResults from 'OLSKResults';
 </section>
 
 </div>
-
-<style src="./ui-style.css"></style>
