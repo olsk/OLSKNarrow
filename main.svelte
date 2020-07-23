@@ -129,6 +129,8 @@ import OLSKResults from 'OLSKResults';
 </header>
 
 <section class="OLSKMasterListBody OLSKMobileViewBody">
+	<slot name="OLSKMasterListBodyHead"></slot>
+
 	<OLSKResults
 		OLSKResultsListItems={ OLSKMasterListItems }
 		OLSKResultsListItemSelected={ OLSKMasterListItemSelected }
