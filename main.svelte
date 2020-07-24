@@ -62,15 +62,13 @@ const mod = {
 	},
 
 	SetupFilterFieldEventListeners () {
-		setTimeout(function () {
-			document.querySelector('.OLSKMasterListFilterField').addEventListener('focus', function () {
-				mod._ValueFilterFieldFocused = true;
-			});
+		document.querySelector('.OLSKMasterListFilterField').addEventListener('focus', function () {
+			mod._ValueFilterFieldFocused = true;
+		});
 
-			document.querySelector('.OLSKMasterListFilterField').addEventListener('blur', function () {
-				mod._ValueFilterFieldFocused = false;
-			});
-		}, 100);
+		document.querySelector('.OLSKMasterListFilterField').addEventListener('blur', function () {
+			mod._ValueFilterFieldFocused = false;
+		});
 	},
 
 	// LIFECYCLE
