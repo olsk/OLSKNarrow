@@ -91,10 +91,10 @@ describe('OLSKMasterList_Misc', function () {
 				});
 			});
 
-			context('keydown ArrowUp', function() {
+			context('focused', function() {
 
 				before(function () {
-					return browser.query(OLSKMasterListFilterField).focus();
+					return browser.focus(OLSKMasterListFilterField);
 				});
 				
 				before(function () {
@@ -108,6 +108,22 @@ describe('OLSKMasterList_Misc', function () {
 				it('sends OLSKMasterListDispatchArrow', function () {
 					browser.assert.text('#TestOLSKMasterListDispatchArrow', '1');
 					browser.assert.text('#TestOLSKMasterListDispatchArrowData', JSON.stringify(uItem('bravo')));
+				});
+
+			});
+
+			context('not focused', function() {
+
+				before(function () {
+					return browser.focus('#TestInputAlternative');
+				});
+				
+				before(function () {
+					return browser.OLSKFireKeyboardEvent(browser.window, 'ArrowDown');
+				});
+
+				it('sends OLSKMasterListDispatchArrow', function () {
+					browser.assert.text('#TestOLSKMasterListDispatchArrow', '1');
 				});
 
 			});

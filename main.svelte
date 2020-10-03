@@ -18,8 +18,6 @@ export let OLSKMasterListFilterFieldAutofocus = false;
 
 export let OLSKMasterItemClass = '';
 
-export let OLSKResultsIgnoreKeyboard = false;
-
 import OLSKInternational from 'OLSKInternational';
 const OLSKLocalized = function(translationConstant) {
 	return OLSKInternational.OLSKInternationalLocalizedString(translationConstant, JSON.parse(`{"OLSK_I18N_SEARCH_REPLACE":"OLSK_I18N_SEARCH_REPLACE"}`)[window.OLSKPublicConstants('OLSKSharedPageCurrentLanguage')]);
@@ -133,9 +131,9 @@ import OLSKResults from 'OLSKResults';
 		OLSKResultsListItems={ OLSKMasterListItems }
 		OLSKResultsListItemSelected={ OLSKMasterListItemSelected }
 		OLSKResultsDispatchClick={ OLSKMasterListDispatchClick }
-		OLSKResultsDispatchArrow={ (inputData) => mod.DataIsFocused() && OLSKMasterListDispatchArrow(inputData) }
+		OLSKResultsDispatchArrow={ (inputData) => OLSKMasterListDispatchArrow(inputData) }
 		let:OLSKResultsListItem={ item }
-		OLSKResultsIgnoreKeyboard={ OLSKResultsIgnoreKeyboard }
+		OLSKResultsIgnoreKeyboard={ !mod.DataIsFocused() }
 		>
 		<div class="OLSKMasterListItem { OLSKMasterItemClass }" aria-label={ OLSKMasterListItemAccessibilitySummaryFor(item) } role="button">
 			<slot OLSKResultsListItem={ item }></slot>
