@@ -5,15 +5,15 @@ const inputData = Object.assign({
 	OLSKMasterListItemAccessibilitySummaryFor (inputData) {
 		return inputData.TestObjectID.repeat(2);
 	},
-	OLSKMasterListDispatchClick: (function _OLSKMasterListDispatchClick (inputData) {
+	OLSKMasterListDispatchClick: (function  (inputData) {
 		window.TestOLSKMasterListDispatchClick.innerHTML = parseInt(window.TestOLSKMasterListDispatchClick.innerHTML) + 1;
 		window.TestOLSKMasterListDispatchClickData.innerHTML = JSON.stringify(inputData);
 	}),
-	OLSKMasterListDispatchArrow: (function _OLSKMasterListDispatchArrow (inputData) {
+	OLSKMasterListDispatchArrow: (function  (inputData) {
 		window.TestOLSKMasterListDispatchArrow.innerHTML = parseInt(window.TestOLSKMasterListDispatchArrow.innerHTML) + 1;
 		window.TestOLSKMasterListDispatchArrowData.innerHTML = JSON.stringify(inputData);
 	}),
-	OLSKMasterListDispatchFilter: (function _OLSKMasterListDispatchFilter (inputData) {
+	OLSKMasterListDispatchFilter: (function  (inputData) {
 		window.TestOLSKMasterListDispatchFilter.innerHTML = parseInt(window.TestOLSKMasterListDispatchFilter.innerHTML) + 1;
 		window.TestOLSKMasterListDispatchFilterData.innerHTML = inputData;
 	}),
