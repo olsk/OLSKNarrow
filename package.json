@@ -12,7 +12,7 @@
   },  
   "devDependencies": {
     "OLSKRollupScaffold": "olsk/OLSKRollupScaffold",
-    "OLSKTesting": "olsk/OLSKTesting",
+    "OLSKSpec": "olsk/OLSKSpec",
     "OLSKUIAssets": "olsk/OLSKUIAssets",
 
     "// I sacrifice myself for the commas of others": null    
