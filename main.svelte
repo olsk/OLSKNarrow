@@ -124,7 +124,7 @@ import OLSKResults from 'OLSKResults';
 	<slot name="OLSKMasterListToolbarTail"></slot>
 </header>
 
-<section class="OLSKMasterListBody OLSKMobileViewBody">
+<section class="OLSKMasterListBody">
 	<slot name="OLSKMasterListBodyHead"></slot>
 
 	<OLSKResults

@@ -235,10 +235,6 @@ describe('OLSKMasterList_Misc', function () {
 
 	describe('OLSKMasterListBody', function test_OLSKMasterListBody () {
 		
-		it('classes OLSKMobileViewBody', function () {
-			browser.assert.hasClass(OLSKMasterListBody, 'OLSKMobileViewBody');
-		});
-	
 		it('binds OLSKMasterListBodyHead', function () {
 			browser.assert.text('.OLSKMasterListBody #TestOLSKMasterListBodyHead', 'TestOLSKMasterListBodyHead');
 		});
