@@ -19,7 +19,7 @@ export let OLSKMasterListFilterFieldAutofocus = false;
 export let OLSKMasterItemClass = '';
 
 import { OLSKLocalized } from 'OLSKInternational';
-import { OLSK_TESTING_BEHAVIOUR } from 'OLSKTesting'
+import { OLSK_SPEC_UI } from 'OLSKSpec'
 
 const mod = {
 
@@ -72,7 +72,7 @@ const mod = {
 	},
 
 	LifecycleComponentDidUpdate () {
-		if (OLSK_TESTING_BEHAVIOUR()) {
+		if (OLSK_SPEC_UI()) {
 			return;
 		}
 
