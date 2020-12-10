@@ -20,6 +20,10 @@ describe('OLSKMasterList_Misc', function () {
 			browser.assert.hasClass(OLSKMasterList, 'OLSKViewportMaster');
 		});
 		
+		it('classes OLSKCommonEdgeRight', function () {
+			browser.assert.hasClass(OLSKMasterList, 'OLSKCommonEdgeRight');
+		});
+		
 		it('classes OLSKMasterListClass', function () {
 			browser.assert.hasClass(OLSKMasterList, 'alfa');
 		});
@@ -140,6 +144,10 @@ describe('OLSKMasterList_Misc', function () {
 
 		it('classes OLSKToolbar', function () {
 			browser.assert.hasClass(OLSKMasterListToolbar, 'OLSKToolbar');
+		});
+
+		it('classes OLSKCommonEdgeBottom', function () {
+			browser.assert.hasClass(OLSKMasterListToolbar, 'OLSKCommonEdgeBottom');
 		});
 
 		it('binds OLSKMasterListToolbarHead', function () {

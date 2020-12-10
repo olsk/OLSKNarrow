@@ -104,9 +104,9 @@ import OLSKInputWrapper from 'OLSKInputWrapper';
 import OLSKResults from 'OLSKResults';
 </script>
 
-<div class="OLSKMasterList OLSKViewportMaster { OLSKMasterListClass }" class:OLSKMobileViewInactive={ OLSKMobileViewInactive } class:OLSKMasterListFocused={ mod._ValueFilterFieldFocused } aria-hidden={ OLSKMobileViewInactive ? true : null }>
+<div class="OLSKMasterList OLSKViewportMaster OLSKCommonEdgeRight { OLSKMasterListClass }" class:OLSKMobileViewInactive={ OLSKMobileViewInactive } class:OLSKMasterListFocused={ mod._ValueFilterFieldFocused } aria-hidden={ OLSKMobileViewInactive ? true : null }>
 
-<header class="OLSKMasterListToolbar OLSKMobileViewHeader OLSKToolbar">
+<header class="OLSKMasterListToolbar OLSKMobileViewHeader OLSKToolbar OLSKCommonEdgeBottom">
 	<slot name="OLSKMasterListToolbarHead"></slot>
 	
 	{#if OLSKMasterListFilterFieldClearButton }
