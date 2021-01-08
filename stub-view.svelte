@@ -40,7 +40,7 @@ import Module from './main.svelte';
 	>
 	<em slot="OLSKMasterListToolbarHead" id="TestOLSKMasterListToolbarHead">TestOLSKMasterListToolbarHead</em>
 	<em slot="OLSKMasterListToolbarTail" id="TestOLSKMasterListToolbarTail">TestOLSKMasterListToolbarTail</em>
-	<em slot="OLSKMasterListBodyHead" id="TestOLSKMasterListBodyHead">TestOLSKMasterListBodyHead</em>
+	<em id="TestOLSKMasterListMain">TestOLSKMasterListMain</em>
 	<div class="TestListItemChild">{ item.TestObjectID.repeat(3) }</div>
 	<em slot="OLSKMasterListBodyTail" id="TestOLSKMasterListBodyTail">TestOLSKMasterListBodyTail</em>
 </Module>

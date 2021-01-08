@@ -121,7 +121,7 @@ import OLSKResults from 'OLSKResults';
 </header>
 
 <section class="OLSKMasterListBody">
-	<slot name="OLSKMasterListBodyHead"></slot>
+	<slot></slot>
 
 	<OLSKResults
 		OLSKResultsListItems={ OLSKMasterListItems }

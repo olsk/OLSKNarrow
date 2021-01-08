@@ -243,8 +243,8 @@ describe('OLSKMasterList_Misc', function () {
 
 	describe('OLSKMasterListBody', function test_OLSKMasterListBody () {
 		
-		it('binds OLSKMasterListBodyHead', function () {
-			browser.assert.text('.OLSKMasterListBody #TestOLSKMasterListBodyHead', 'TestOLSKMasterListBodyHead');
+		it('binds OLSKMasterListMain', function () {
+			browser.assert.text('.OLSKMasterListBody #TestOLSKMasterListMain', 'TestOLSKMasterListMain');
 		});
 	
 		it('binds OLSKMasterListBodyTail', function () {
