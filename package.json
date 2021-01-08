@@ -1,19 +1,14 @@
 {
-  "name": "OLSKAppToolbar",
+  "name": "OLSKMasterList",
   "main": "main.svelte",
   "dependencies": {
-    "// INPUT WRAPPER": null,
     "OLSKInputWrapper": "olsk/OLSKInputWrapper",
-
-    "// RESULTS": null,
     "OLSKResults": "olsk/OLSKResults",
-    
-    "// I sacrifice myself for the commas of others": null
+    "OLSKUIAssets": "olsk/OLSKUIAssets"
   },  
   "devDependencies": {
     "OLSKRollupScaffold": "olsk/OLSKRollupScaffold",
     "OLSKSpec": "olsk/OLSKSpec",
-    "OLSKUIAssets": "olsk/OLSKUIAssets",
 
     "// I sacrifice myself for the commas of others": null    
   }
