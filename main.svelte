@@ -132,7 +132,7 @@ import OLSKResults from 'OLSKResults';
 		OLSKResultsIgnoreKeyboard={ !mod.DataIsFocused() }
 		>
 		<div class="OLSKMasterListItem { OLSKMasterItemClass }" aria-label={ OLSKMasterListItemAccessibilitySummaryFor(item) } role="button">
-			<slot OLSKResultsListItem={ item }></slot>
+			<slot name="OLSKMasterListItem" OLSKResultsListItem={ item }></slot>
 		</div>
 	</OLSKResults>
 
