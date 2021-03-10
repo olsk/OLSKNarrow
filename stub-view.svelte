@@ -2,7 +2,7 @@
 const inputData = Object.assign({
 	OLSKMasterListItems: [],
 	OLSKMasterListFilterText: '',
-	OLSKMasterListItemAccessibilitySummaryFor (inputData) {
+	OLSKMasterListItemAccessibilitySummaryFunction (inputData) {
 		return inputData.TestObjectID.repeat(2);
 	},
 	OLSKMasterListDispatchClick: (function  (inputData) {

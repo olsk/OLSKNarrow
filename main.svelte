@@ -2,7 +2,7 @@
 export let OLSKMasterListFilterText;
 export let OLSKMasterListItems;
 export let OLSKMasterListItemSelected = null;
-export let OLSKMasterListItemAccessibilitySummaryFor;
+export let OLSKMasterListItemAccessibilitySummaryFunction;
 export let OLSKMasterListDispatchClick;
 export let OLSKMasterListDispatchArrow;
 export let OLSKMasterListDispatchFilter;
@@ -131,7 +131,7 @@ import OLSKResults from 'OLSKResults';
 		let:OLSKResultsListItem={ item }
 		OLSKResultsIgnoreKeyboard={ !mod.DataIsFocused() }
 		>
-		<div class="OLSKMasterListItem { OLSKMasterItemClass }" aria-label={ OLSKMasterListItemAccessibilitySummaryFor(item) } role="button">
+		<div class="OLSKMasterListItem { OLSKMasterItemClass }" aria-label={ OLSKMasterListItemAccessibilitySummaryFunction(item) } role="button">
 			<slot name="OLSKMasterListItem" OLSKResultsListItem={ item }></slot>
 		</div>
 	</OLSKResults>
