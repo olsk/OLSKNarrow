@@ -11,6 +11,7 @@ Object.entries({
 	
 	OLSKMasterListToolbar: '.OLSKMasterListToolbar',
 	
+	OLSKMasterListForm: '.OLSKMasterListForm',
 	OLSKMasterListFilterField: '.OLSKMasterListFilterField',
 
 	OLSKMasterListBody: '.OLSKMasterListBody',
@@ -43,6 +44,10 @@ describe('OLSKMasterList_Access', function () {
 
 	it('shows OLSKInputWrapper', function () {
 		browser.assert.elements('.OLSKInputWrapper', 1);
+	});
+
+	it('shows OLSKMasterListForm', function () {
+		browser.assert.elements(OLSKMasterListForm, 1);
 	});
 
 	it('shows OLSKMasterListFilterField', function () {

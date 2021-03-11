@@ -224,6 +224,29 @@ describe('OLSKMasterList_Misc', function () {
 			});
 		
 		});
+			
+		context('submit', function () {
+
+			const item = Math.random().toString();
+		
+			before(function () {
+				browser.pressButton('.OLSKInputWrapperClearButton');
+				browser.assert.text('#TestOLSKMasterListDispatchSubmit', '0');
+			});
+
+			before(function () {
+				browser.fill(OLSKMasterListFilterField, item);
+			});
+
+			before(function () {
+				return browser.fire(OLSKMasterListForm, 'submit');
+			});
+
+			it('sends OLSKMasterListDispatchSubmit', function () {
+				browser.assert.text('#TestOLSKMasterListDispatchSubmit', '1');
+			});
+		
+		});
 
 		context('OLSKMasterListFilterFieldAutofocus', function () {
 

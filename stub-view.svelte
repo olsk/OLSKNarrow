@@ -17,6 +17,9 @@ const inputData = Object.assign({
 		window.TestOLSKMasterListDispatchFilter.innerHTML = parseInt(window.TestOLSKMasterListDispatchFilter.innerHTML) + 1;
 		window.TestOLSKMasterListDispatchFilterData.innerHTML = inputData;
 	}),
+	OLSKMasterListDispatchSubmit: (function  () {
+		window.TestOLSKMasterListDispatchSubmit.innerHTML = parseInt(window.TestOLSKMasterListDispatchSubmit.innerHTML) + 1;
+	}),
 }, Object.fromEntries(Array.from((new window.URLSearchParams(window.location.search)).entries()).map(function (e, index, coll) {
 	if (['OLSKMasterListItems', 'OLSKMasterListItemSelected', 'OLSKMasterListFilterFieldClearButton', 'OLSKMasterListFilterFieldAutofocus'].includes(e[0])) {
 		e[1] = JSON.parse(e[1]);

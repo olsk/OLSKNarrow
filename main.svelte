@@ -6,6 +6,7 @@ export let OLSKMasterListItemAccessibilitySummaryFunction;
 export let OLSKMasterListDispatchClick;
 export let OLSKMasterListDispatchArrow;
 export let OLSKMasterListDispatchFilter;
+export let OLSKMasterListDispatchSubmit;
 
 export let OLSKMobileViewInactive = false;
 
@@ -41,6 +42,12 @@ const mod = {
 
 	InterfaceFilterFieldDidInput (event) {
 		OLSKMasterListDispatchFilter(this.value);
+	},
+
+	InterfaceFormDidSubmit (event) {
+		event.preventDefault();
+
+		OLSKMasterListDispatchSubmit();
 	},
 
 	// MESSAGE
@@ -110,9 +117,11 @@ import OLSKResults from 'OLSKResults';
 	<slot name="OLSKMasterListToolbarHead"></slot>
 	
 	{#if OLSKMasterListFilterFieldClearButton }
+	<form class="OLSKMasterListForm" on:submit={ mod.InterfaceFormDidSubmit }>
 		<OLSKInputWrapper OLSKInputWrapperValue={ OLSKMasterListFilterFieldClearButton ? OLSKMasterListFilterText : '' } OLSKInputWrapperDispatchClear={ mod.OLSKInputWrapperDispatchClear } >
 			<input class="OLSKMasterListFilterField OLSKMobileSafariRemoveDefaultInputStyle { OLSKMasterListFilterFieldClass }" placeholder={ OLSKMasterListFilterFieldPlaceholderText || OLSKLocalized('OLSKMasterListFilterFieldText') } autofocus={ OLSKMasterListFilterFieldAutofocus } bind:value={ OLSKMasterListFilterText } on:input={ mod.InterfaceFilterFieldDidInput } />
 		</OLSKInputWrapper>
+	</form>
 	{:else}
 		<input class="OLSKMasterListFilterField OLSKMobileSafariRemoveDefaultInputStyle { OLSKMasterListFilterFieldClass }" placeholder={ OLSKMasterListFilterFieldPlaceholderText || OLSKLocalized('OLSKMasterListFilterFieldText') } autofocus={ OLSKMasterListFilterFieldAutofocus } bind:value={ OLSKMasterListFilterText } on:input={ mod.InterfaceFilterFieldDidInput } />
 	{/if}
