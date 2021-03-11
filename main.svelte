@@ -117,7 +117,7 @@ import OLSKResults from 'OLSKResults';
 	<slot name="OLSKMasterListToolbarHead"></slot>
 	
 	{#if OLSKMasterListFilterFieldClearButton }
-	<form class="OLSKMasterListForm" on:submit={ mod.InterfaceFormDidSubmit }>
+	<form class="OLSKMasterListForm OLSKToolbarFlexible" on:submit={ mod.InterfaceFormDidSubmit }>
 		<OLSKInputWrapper OLSKInputWrapperValue={ OLSKMasterListFilterFieldClearButton ? OLSKMasterListFilterText : '' } OLSKInputWrapperDispatchClear={ mod.OLSKInputWrapperDispatchClear } >
 			<input class="OLSKMasterListFilterField OLSKMobileSafariRemoveDefaultInputStyle { OLSKMasterListFilterFieldClass }" placeholder={ OLSKMasterListFilterFieldPlaceholderText || OLSKLocalized('OLSKMasterListFilterFieldText') } autofocus={ OLSKMasterListFilterFieldAutofocus } bind:value={ OLSKMasterListFilterText } on:input={ mod.InterfaceFilterFieldDidInput } />
 		</OLSKInputWrapper>

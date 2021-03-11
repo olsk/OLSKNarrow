@@ -160,6 +160,14 @@ describe('OLSKMasterList_Misc', function () {
 	
 	});
 
+	describe('OLSKMasterListForm', function test_OLSKMasterListForm() {
+		
+		it('classes OLSKToolbarFlexible', function () {
+			browser.assert.hasClass(OLSKMasterListForm, 'OLSKToolbarFlexible');
+		});
+	
+	});
+
 	describe('OLSKMasterListFilterField', function test_OLSKMasterListFilterField() {
 
 		before(function() {
