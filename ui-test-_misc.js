@@ -271,7 +271,7 @@ describe('OLSKMasterList_Misc', function () {
 		});
 		
 		it('sets OLSKResultsListItem', function () {
-			browser.assert.text('.OLSKResultsListItem .TestListItemChild', uItem().TestObjectID.repeat(3));
+			browser.assert.text('.OLSKResultsListItem .TestListItemChild', uItem().TestObjectID);
 		});
 		
 		it('classes OLSKMasterItemClass', function () {

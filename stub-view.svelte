@@ -36,12 +36,12 @@ import Module from './main.svelte';
 
 <Module
 	{ ...inputData }
-	let:OLSKResultsListItem={ item }
+	let:OLSKResultsListItem
 	>
 	<em slot="OLSKMasterListToolbarHead" id="TestOLSKMasterListToolbarHead">TestOLSKMasterListToolbarHead</em>
 	<em slot="OLSKMasterListToolbarTail" id="TestOLSKMasterListToolbarTail">TestOLSKMasterListToolbarTail</em>
 	<em id="TestOLSKMasterListMain">TestOLSKMasterListMain</em>
-	<div class="TestListItemChild">{ item.TestObjectID.repeat(3) }</div>
+	<div slot="OLSKMasterListItem" class="TestListItemChild">{ OLSKResultsListItem.TestObjectID }</div>
 	<em slot="OLSKMasterListBodyTail" id="TestOLSKMasterListBodyTail">TestOLSKMasterListBodyTail</em>
 </Module>
 
