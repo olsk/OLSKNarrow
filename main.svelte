@@ -6,7 +6,7 @@ export let OLSKMasterListItemAccessibilitySummaryFunction;
 export let OLSKMasterListDispatchClick;
 export let OLSKMasterListDispatchArrow;
 export let OLSKMasterListDispatchFilter;
-export let OLSKMasterListDispatchSubmit;
+export let OLSKMasterListDispatchSubmit = null;
 
 export let OLSKMobileViewInactive = false;
 
@@ -47,7 +47,7 @@ const mod = {
 	InterfaceFormDidSubmit (event) {
 		event.preventDefault();
 
-		OLSKMasterListDispatchSubmit();
+		OLSKMasterListDispatchSubmit && OLSKMasterListDispatchSubmit();
 	},
 
 	// MESSAGE
