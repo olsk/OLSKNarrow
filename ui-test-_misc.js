@@ -178,10 +178,6 @@ describe('OLSKMasterList_Misc', function () {
 			});
 		});
 
-		it('classes OLSKMobileSafariRemoveDefaultInputStyle', function () {
-			browser.assert.hasClass(OLSKMasterListFilterField, 'OLSKMobileSafariRemoveDefaultInputStyle');
-		});
-
 		it('binds OLSKMasterListFilterText', function () {
 			browser.assert.input(OLSKMasterListFilterField, 'alfa');
 		});
