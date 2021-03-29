@@ -186,6 +186,10 @@ describe('OLSKMasterList_Misc', function () {
 			browser.assert.elements('.OLSKInputWrapperClearButton', 1);
 		});
 		
+		it('classes OLSKDecorInput', function () {
+			browser.assert.hasClass(OLSKMasterListFilterField, 'OLSKDecorInput');
+		});
+		
 		it('classes OLSKMasterListFilterFieldClass', function () {
 			browser.assert.hasClass(OLSKMasterListFilterField, 'bravo');
 		});
