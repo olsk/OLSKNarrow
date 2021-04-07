@@ -3,7 +3,7 @@ export let OLSKMasterListFilterText;
 export let OLSKMasterListItems;
 export let OLSKMasterListItemSelected = null;
 export let OLSKMasterListItemAccessibilitySummaryFunction;
-export let OLSKMasterListDispatchClick;
+export let OLSKResultsDispatchClick;
 export let OLSKMasterListDispatchArrow;
 export let OLSKMasterListDispatchFilter;
 export let OLSKMasterListDispatchSubmit = null;
@@ -135,7 +135,7 @@ import OLSKResults from 'OLSKResults';
 	<OLSKResults
 		OLSKResultsListItems={ OLSKMasterListItems }
 		OLSKResultsListItemSelected={ OLSKMasterListItemSelected }
-		OLSKResultsDispatchClick={ OLSKMasterListDispatchClick }
+		OLSKResultsDispatchClick={ OLSKResultsDispatchClick }
 		OLSKResultsDispatchArrow={ (inputData) => OLSKMasterListDispatchArrow(inputData) }
 		let:OLSKResultsListItem={ item }
 		OLSKResultsIgnoreKeyboard={ !mod.DataIsFocused() }

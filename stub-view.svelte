@@ -5,10 +5,7 @@ const inputData = Object.assign({
 	OLSKMasterListItemAccessibilitySummaryFunction (inputData) {
 		return inputData.TestObjectID.repeat(2);
 	},
-	OLSKMasterListDispatchClick: (function  (inputData) {
-		window.TestOLSKMasterListDispatchClick.innerHTML = parseInt(window.TestOLSKMasterListDispatchClick.innerHTML) + 1;
-		window.TestOLSKMasterListDispatchClickData.innerHTML = JSON.stringify(inputData);
-	}),
+	OLSKResultsDispatchClick: (function  () {}),
 	OLSKMasterListDispatchArrow: (function  (inputData) {
 		window.TestOLSKMasterListDispatchArrow.innerHTML = parseInt(window.TestOLSKMasterListDispatchArrow.innerHTML) + 1;
 		window.TestOLSKMasterListDispatchArrowData.innerHTML = JSON.stringify(inputData);

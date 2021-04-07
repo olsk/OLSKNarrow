@@ -308,24 +308,6 @@ describe('OLSKMasterList_Misc', function () {
 		it('classes OLSKMasterItemClass', function () {
 			browser.assert.hasClass(OLSKMasterListItem, 'alfa');
 		});
-
-		context('click', function () {
-			
-			before(function () {
-				browser.assert.text('#TestOLSKMasterListDispatchClick', '0');
-				browser.assert.text('#TestOLSKMasterListDispatchClickData', 'undefined');
-			});
-			
-			before(function () {
-				return browser.click(OLSKMasterListItem);
-			});
-
-			it('sends OLSKMasterListDispatchClick', function () {
-				browser.assert.text('#TestOLSKMasterListDispatchClick', '1');
-				browser.assert.text('#TestOLSKMasterListDispatchClickData', JSON.stringify(uItem()));
-			});
-		
-		});
 		
 	});
 
