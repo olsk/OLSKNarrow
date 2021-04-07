@@ -8,7 +8,7 @@ const inputData = Object.assign({
 	OLSKCollectionItemAccessibilitySummaryFunction (inputData) {
 		return inputData.TestObjectID.repeat(2);
 	},
-	OLSKResultsDispatchClick: (function  () {}),
+	OLSKCollectionDispatchClick: (function  () {}),
 	OLSKResultsDispatchArrow: (function  (inputData) {
 		window.TestOLSKResultsDispatchArrow.innerHTML = parseInt(window.TestOLSKResultsDispatchArrow.innerHTML) + 1;
 		window.TestOLSKResultsDispatchArrowData.innerHTML = JSON.stringify(inputData);

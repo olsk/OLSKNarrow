@@ -6,7 +6,7 @@ export let OLSKMasterListFilterText;
 export let OLSKCollectionItems;
 export let OLSKCollectionItemsLocus = null;
 export let OLSKCollectionItemAccessibilitySummaryFunction;
-export let OLSKResultsDispatchClick;
+export let OLSKCollectionDispatchClick;
 export let OLSKResultsDispatchArrow;
 export let OLSKMasterListDispatchFilter;
 export let OLSKMasterListDispatchSubmit = null;
@@ -143,7 +143,7 @@ import OLSKCollection from 'OLSKCollection';
 
 		OLSKCollectionItemAccessibilitySummaryFunction={ OLSKCollectionItemAccessibilitySummaryFunction }
 
-		OLSKCollectionDispatchClick={ OLSKResultsDispatchClick }
+		OLSKCollectionDispatchClick={ OLSKCollectionDispatchClick }
 		OLSKCollectionDispatchArrow={ OLSKResultsDispatchArrow }
 
 		let:OLSKCollectionItem={ item }
