@@ -4,7 +4,7 @@ export let _OLSKCollectionDispatchKey;
 
 export let OLSKMasterListFilterText;
 export let OLSKMasterListItems;
-export let OLSKMasterListItemSelected = null;
+export let OLSKCollectionItemsLocus = null;
 export let OLSKCollectionItemAccessibilitySummaryFunction;
 export let OLSKResultsDispatchClick;
 export let OLSKResultsDispatchArrow;
@@ -135,7 +135,7 @@ import OLSKCollection from 'OLSKCollection';
 
 	<OLSKCollection
 		OLSKCollectionItems={ OLSKMasterListItems }
-		OLSKCollectionItemsLocus={ OLSKMasterListItemSelected }
+		OLSKCollectionItemsLocus={ OLSKCollectionItemsLocus }
 		OLSKCollectionIgnoreKeyboard={ !mod.DataIsFocused() }
 
 		OLSKCollectionSortFunction={ OLSKCollectionSortFunction }

@@ -91,7 +91,7 @@ describe('OLSKMasterList_Misc', function () {
 			before(function() {
 				return browser.OLSKVisit(kDefaultRoute, {
 					OLSKMasterListItems: JSON.stringify([uItem('alfa'), uItem('bravo')]),
-					OLSKMasterListItemSelected: JSON.stringify(uItem('alfa')),
+					OLSKCollectionItemsLocus: JSON.stringify(uItem('alfa')),
 				});
 			});
 
@@ -298,12 +298,12 @@ describe('OLSKMasterList_Misc', function () {
 		
 	});
 
-	describe('OLSKMasterListItemSelected', function test_OLSKMasterListItemSelected() {
+	describe('OLSKCollectionItemsLocus', function test_OLSKCollectionItemsLocus() {
 		
 		before(function() {
 			return browser.OLSKVisit(kDefaultRoute, {
 				OLSKMasterListItems: JSON.stringify([uItem('alfa'), uItem('bravo')]),
-				OLSKMasterListItemSelected: JSON.stringify(uItem('bravo')),
+				OLSKCollectionItemsLocus: JSON.stringify(uItem('bravo')),
 			});
 		});
 
