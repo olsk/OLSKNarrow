@@ -3,7 +3,7 @@ const inputData = Object.assign({
 	OLSKCollectionSortFunction: (function () {}),
 	_OLSKCollectionDispatchKey: (function () {}),
 	
-	OLSKMasterListItems: [],
+	OLSKCollectionItems: [],
 	OLSKMasterListFilterText: '',
 	OLSKCollectionItemAccessibilitySummaryFunction (inputData) {
 		return inputData.TestObjectID.repeat(2);
@@ -21,7 +21,7 @@ const inputData = Object.assign({
 		window.TestOLSKMasterListDispatchSubmit.innerHTML = parseInt(window.TestOLSKMasterListDispatchSubmit.innerHTML) + 1;
 	}),
 }, Object.fromEntries(Array.from((new window.URLSearchParams(window.location.search)).entries()).map(function (e, index, coll) {
-	if (['OLSKMasterListItems', 'OLSKCollectionItemsLocus', 'OLSKMasterListFilterFieldClearButton', 'OLSKMasterListFilterFieldAutofocus'].includes(e[0])) {
+	if (['OLSKCollectionItems', 'OLSKCollectionItemsLocus', 'OLSKMasterListFilterFieldClearButton', 'OLSKMasterListFilterFieldAutofocus'].includes(e[0])) {
 		e[1] = JSON.parse(e[1]);
 	}
 
