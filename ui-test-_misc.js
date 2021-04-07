@@ -284,20 +284,12 @@ describe('OLSKMasterList_Misc', function () {
 	
 	});
 
-	describe('OLSKMasterListItem', function test_OLSKMasterListItem() {
+	describe('OLSKCollectionItem', function test_OLSKCollectionItem() {
 
 		before(function() {
 			return browser.OLSKVisit(kDefaultRoute, {
 				OLSKMasterListItems: JSON.stringify([uItem()]),
 			});
-		});
-
-		it('sets aria-label', function () {
-			browser.assert.attribute(OLSKMasterListItem, 'aria-label', uItem().TestObjectID.repeat(2));
-		});
-		
-		it('sets role', function () {
-			browser.assert.attribute(OLSKMasterListItem, 'role', 'button');
 		});
 		
 		it('sets OLSKCollectionItem', function () {

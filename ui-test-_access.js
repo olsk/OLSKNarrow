@@ -15,7 +15,6 @@ Object.entries({
 	OLSKMasterListFilterField: '.OLSKMasterListFilterField',
 
 	OLSKMasterListBody: '.OLSKMasterListBody',
-	OLSKMasterListItem: '.OLSKMasterListItem',
 }).map(function (e) {
 	return global[e.shift()]  = e.pop();
 });
@@ -60,24 +59,6 @@ describe('OLSKMasterList_Access', function () {
 
 	it('shows OLSKCollection', function () {
 		browser.assert.elements('.OLSKCollection', 1);
-	});
-
-	it('hides OLSKMasterListItem', function () {
-		browser.assert.elements(OLSKMasterListItem, 0);
-	});
-
-	context('OLSKMasterListItems', function() {
-		
-		before(function() {
-			return browser.OLSKVisit(kDefaultRoute, {
-				OLSKMasterListItems: JSON.stringify([uItem()]),
-			});
-		});
-
-		it('shows OLSKMasterListItem', function () {
-			browser.assert.elements(OLSKMasterListItem, 1);
-		});
-		
 	});
 
 	context('OLSKMasterListFilterFieldClearButton', function() {

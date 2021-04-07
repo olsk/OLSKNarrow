@@ -149,9 +149,9 @@ import OLSKCollection from 'OLSKCollection';
 		let:OLSKCollectionItem={ item }
 		>
 		<div slot="OLSKCollectionItem">
-			<div class="OLSKMasterListItem" aria-label={ OLSKMasterListItemAccessibilitySummaryFunction(item) } role="button">
-				<slot name="OLSKMasterListItem" OLSKResultsListItem={ item }></slot>
-			</div>
+			{#if $$slots.OLSKCollectionItem}
+				<slot name="OLSKCollectionItem" OLSKCollectionItem={ item }></slot>	
+			{/if}
 		</div>
 	</OLSKCollection>
 
