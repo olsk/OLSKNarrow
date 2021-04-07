@@ -17,8 +17,6 @@ export let OLSKMasterListFilterFieldPlaceholderText = '';
 export let OLSKMasterListFilterFieldClearButton = true;
 export let OLSKMasterListFilterFieldAutofocus = false;
 
-export let OLSKMasterItemClass = '';
-
 import { OLSKLocalized } from 'OLSKInternational';
 import { OLSK_SPEC_UI } from 'OLSKSpec'
 
@@ -140,7 +138,7 @@ import OLSKResults from 'OLSKResults';
 		let:OLSKResultsListItem={ item }
 		OLSKResultsIgnoreKeyboard={ !mod.DataIsFocused() }
 		>
-		<div class="OLSKMasterListItem { OLSKMasterItemClass }" aria-label={ OLSKMasterListItemAccessibilitySummaryFunction(item) } role="button">
+		<div class="OLSKMasterListItem" aria-label={ OLSKMasterListItemAccessibilitySummaryFunction(item) } role="button">
 			<slot name="OLSKMasterListItem" OLSKResultsListItem={ item }></slot>
 		</div>
 	</OLSKResults>

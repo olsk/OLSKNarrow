@@ -289,7 +289,6 @@ describe('OLSKMasterList_Misc', function () {
 		before(function() {
 			return browser.OLSKVisit(kDefaultRoute, {
 				OLSKMasterListItems: JSON.stringify([uItem()]),
-				OLSKMasterItemClass: 'alfa',
 			});
 		});
 
@@ -303,10 +302,6 @@ describe('OLSKMasterList_Misc', function () {
 		
 		it('sets OLSKResultsListItem', function () {
 			browser.assert.text('.OLSKResultsListItem .TestListItemChild', uItem().TestObjectID);
-		});
-		
-		it('classes OLSKMasterItemClass', function () {
-			browser.assert.hasClass(OLSKMasterListItem, 'alfa');
 		});
 		
 	});
