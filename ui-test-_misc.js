@@ -86,7 +86,7 @@ describe('OLSKMasterList_Misc', function () {
 		
 		});
 
-		context('OLSKResultsDispatchArrow', function () {
+		context('OLSKCollectionDispatchArrow', function () {
 
 			before(function() {
 				return browser.OLSKVisit(kDefaultRoute, {
@@ -102,16 +102,16 @@ describe('OLSKMasterList_Misc', function () {
 				});
 				
 				before(function () {
-					browser.assert.text('#TestOLSKResultsDispatchArrow', '0');
+					browser.assert.text('#TestOLSKCollectionDispatchArrow', '0');
 				});
 
 				before(function () {
 					return browser.OLSKFireKeyboardEvent(browser.window, 'ArrowDown');
 				});
 
-				it('sends OLSKResultsDispatchArrow', function () {
-					browser.assert.text('#TestOLSKResultsDispatchArrow', '1');
-					browser.assert.text('#TestOLSKResultsDispatchArrowData', JSON.stringify(uItem('bravo')));
+				it('sends OLSKCollectionDispatchArrow', function () {
+					browser.assert.text('#TestOLSKCollectionDispatchArrow', '1');
+					browser.assert.text('#TestOLSKCollectionDispatchArrowData', JSON.stringify(uItem('bravo')));
 				});
 
 			});
@@ -126,8 +126,8 @@ describe('OLSKMasterList_Misc', function () {
 					return browser.OLSKFireKeyboardEvent(browser.window, 'ArrowDown');
 				});
 
-				it('sends no OLSKResultsDispatchArrow', function () {
-					browser.assert.text('#TestOLSKResultsDispatchArrow', '1');
+				it('sends no OLSKCollectionDispatchArrow', function () {
+					browser.assert.text('#TestOLSKCollectionDispatchArrow', '1');
 				});
 
 			});

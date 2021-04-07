@@ -9,9 +9,9 @@ const inputData = Object.assign({
 		return inputData.TestObjectID.repeat(2);
 	},
 	OLSKCollectionDispatchClick: (function  () {}),
-	OLSKResultsDispatchArrow: (function  (inputData) {
-		window.TestOLSKResultsDispatchArrow.innerHTML = parseInt(window.TestOLSKResultsDispatchArrow.innerHTML) + 1;
-		window.TestOLSKResultsDispatchArrowData.innerHTML = JSON.stringify(inputData);
+	OLSKCollectionDispatchArrow: (function  (inputData) {
+		window.TestOLSKCollectionDispatchArrow.innerHTML = parseInt(window.TestOLSKCollectionDispatchArrow.innerHTML) + 1;
+		window.TestOLSKCollectionDispatchArrowData.innerHTML = JSON.stringify(inputData);
 	}),
 	OLSKMasterListDispatchFilter: (function  (inputData) {
 		window.TestOLSKMasterListDispatchFilter.innerHTML = parseInt(window.TestOLSKMasterListDispatchFilter.innerHTML) + 1;
