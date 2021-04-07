@@ -1,5 +1,8 @@
 <script>
 const inputData = Object.assign({
+	OLSKCollectionSortFunction: (function () {}),
+	_OLSKCollectionDispatchKey: (function () {}),
+	
 	OLSKMasterListItems: [],
 	OLSKMasterListFilterText: '',
 	OLSKMasterListItemAccessibilitySummaryFunction (inputData) {

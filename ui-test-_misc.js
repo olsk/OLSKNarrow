@@ -300,8 +300,8 @@ describe('OLSKMasterList_Misc', function () {
 			browser.assert.attribute(OLSKMasterListItem, 'role', 'button');
 		});
 		
-		it('sets OLSKResultsListItem', function () {
-			browser.assert.text('.OLSKResultsListItem .TestListItemChild', uItem().TestObjectID);
+		it('sets OLSKCollectionItem', function () {
+			browser.assert.text('.OLSKCollectionItem .TestListItemChild', uItem().TestObjectID);
 		});
 		
 	});
@@ -315,9 +315,9 @@ describe('OLSKMasterList_Misc', function () {
 			});
 		});
 
-		it('sets OLSKResultsListItemSelected', function () {
-			browser.assert.elements('.OLSKResultsListItemSelected', 1);
-			browser.assert.hasClass('.OLSKResultsListItem:nth-child(2)', 'OLSKResultsListItemSelected');
+		it('sets OLSKCollectionItemSelected', function () {
+			browser.assert.elements('.OLSKCollectionItemLocus', 1);
+			browser.assert.hasClass('.OLSKCollectionItem:nth-child(2)', 'OLSKCollectionItemLocus');
 		});
 		
 	});

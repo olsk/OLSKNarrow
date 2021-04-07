@@ -3,13 +3,7 @@
   "main": "main.svelte",
   "dependencies": {
     "OLSKInputWrapper": "olsk/OLSKInputWrapper",
-    "OLSKResults": "olsk/OLSKResults",
+    "OLSKCollection": "olsk/OLSKCollection",
     "OLSKUIAssets": "olsk/OLSKUIAssets"
-  },  
-  "devDependencies": {
-    "OLSKRollupScaffold": "olsk/OLSKRollupScaffold",
-    "OLSKSpec": "olsk/OLSKSpec",
-
-    "// I sacrifice myself for the commas of others": null    
   }
 }

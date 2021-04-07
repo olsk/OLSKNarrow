@@ -1,4 +1,7 @@
 <script>
+export let OLSKCollectionSortFunction;
+export let _OLSKCollectionDispatchKey;
+
 export let OLSKMasterListFilterText;
 export let OLSKMasterListItems;
 export let OLSKMasterListItemSelected = null;
@@ -106,7 +109,7 @@ import { afterUpdate } from 'svelte';
 afterUpdate(mod.LifecycleComponentDidUpdate);
 
 import OLSKInputWrapper from 'OLSKInputWrapper';
-import OLSKResults from 'OLSKResults';
+import OLSKCollection from 'OLSKCollection';
 </script>
 
 <div class="OLSKMasterList OLSKViewportMaster OLSKCommonEdgeRight { OLSKMasterListClass }" class:OLSKMobileViewInactive={ OLSKMobileViewInactive } class:OLSKMasterListFocused={ mod._ValueFilterFieldFocused } aria-hidden={ OLSKMobileViewInactive ? true : null }>
@@ -130,18 +133,27 @@ import OLSKResults from 'OLSKResults';
 <section class="OLSKMasterListBody">
 	<slot></slot>
 
-	<OLSKResults
-		OLSKResultsListItems={ OLSKMasterListItems }
-		OLSKResultsListItemSelected={ OLSKMasterListItemSelected }
-		OLSKResultsDispatchClick={ OLSKResultsDispatchClick }
-		OLSKResultsDispatchArrow={ OLSKResultsDispatchArrow }
-		let:OLSKResultsListItem={ item }
-		OLSKResultsIgnoreKeyboard={ !mod.DataIsFocused() }
+	<OLSKCollection
+		OLSKCollectionItems={ OLSKMasterListItems }
+		OLSKCollectionItemsLocus={ OLSKMasterListItemSelected }
+		OLSKCollectionIgnoreKeyboard={ !mod.DataIsFocused() }
+
+		OLSKCollectionSortFunction={ OLSKCollectionSortFunction }
+		_OLSKCollectionDispatchKey={ _OLSKCollectionDispatchKey }
+
+		OLSKCollectionItemAccessibilitySummaryFunction={ OLSKMasterListItemAccessibilitySummaryFunction }
+
+		OLSKCollectionDispatchClick={ OLSKResultsDispatchClick }
+		OLSKCollectionDispatchArrow={ OLSKResultsDispatchArrow }
+
+		let:OLSKCollectionItem={ item }
 		>
-		<div class="OLSKMasterListItem" aria-label={ OLSKMasterListItemAccessibilitySummaryFunction(item) } role="button">
-			<slot name="OLSKMasterListItem" OLSKResultsListItem={ item }></slot>
+		<div slot="OLSKCollectionItem">
+			<div class="OLSKMasterListItem" aria-label={ OLSKMasterListItemAccessibilitySummaryFunction(item) } role="button">
+				<slot name="OLSKMasterListItem" OLSKResultsListItem={ item }></slot>
+			</div>
 		</div>
-	</OLSKResults>
+	</OLSKCollection>
 
 	<slot name="OLSKMasterListBodyTail"></slot>
 </section>

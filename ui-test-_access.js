@@ -58,8 +58,8 @@ describe('OLSKMasterList_Access', function () {
 		browser.assert.elements(OLSKMasterListBody, 1);
 	});
 
-	it('shows OLSKResults', function () {
-		browser.assert.elements('.OLSKResults', 1);
+	it('shows OLSKCollection', function () {
+		browser.assert.elements('.OLSKCollection', 1);
 	});
 
 	it('hides OLSKMasterListItem', function () {
