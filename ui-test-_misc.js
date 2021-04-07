@@ -307,7 +307,7 @@ describe('OLSKMasterList_Misc', function () {
 			});
 		});
 
-		it('sets OLSKCollectionItemSelected', function () {
+		it('sets OLSKCollectionItemsLocus', function () {
 			browser.assert.elements('.OLSKCollectionItemLocus', 1);
 			browser.assert.hasClass('.OLSKCollectionItem:nth-child(2)', 'OLSKCollectionItemLocus');
 		});
