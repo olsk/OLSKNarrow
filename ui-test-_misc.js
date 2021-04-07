@@ -102,16 +102,16 @@ describe('OLSKMasterList_Misc', function () {
 				});
 				
 				before(function () {
-					browser.assert.text('#TestOLSKMasterListDispatchArrow', '0');
+					browser.assert.text('#TestOLSKResultsDispatchArrow', '0');
 				});
 
 				before(function () {
 					return browser.OLSKFireKeyboardEvent(browser.window, 'ArrowDown');
 				});
 
-				it('sends OLSKMasterListDispatchArrow', function () {
-					browser.assert.text('#TestOLSKMasterListDispatchArrow', '1');
-					browser.assert.text('#TestOLSKMasterListDispatchArrowData', JSON.stringify(uItem('bravo')));
+				it('sends OLSKResultsDispatchArrow', function () {
+					browser.assert.text('#TestOLSKResultsDispatchArrow', '1');
+					browser.assert.text('#TestOLSKResultsDispatchArrowData', JSON.stringify(uItem('bravo')));
 				});
 
 			});
@@ -126,8 +126,8 @@ describe('OLSKMasterList_Misc', function () {
 					return browser.OLSKFireKeyboardEvent(browser.window, 'ArrowDown');
 				});
 
-				it('sends OLSKMasterListDispatchArrow', function () {
-					browser.assert.text('#TestOLSKMasterListDispatchArrow', '1');
+				it('sends no OLSKResultsDispatchArrow', function () {
+					browser.assert.text('#TestOLSKResultsDispatchArrow', '1');
 				});
 
 			});
