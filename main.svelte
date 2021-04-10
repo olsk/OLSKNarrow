@@ -1,6 +1,7 @@
 <script>
 export let OLSKCollectionSortFunction;
 export let _OLSKCollectionDispatchKey;
+export let OLSKCollectionChunkFunction = null;
 
 export let OLSKMasterListFilterText;
 export let OLSKCollectionItems;
@@ -140,6 +141,7 @@ import OLSKCollection from 'OLSKCollection';
 
 		OLSKCollectionSortFunction={ OLSKCollectionSortFunction }
 		_OLSKCollectionDispatchKey={ _OLSKCollectionDispatchKey }
+		OLSKCollectionChunkFunction={ OLSKCollectionChunkFunction }
 
 		OLSKCollectionItemAccessibilitySummaryFunction={ OLSKCollectionItemAccessibilitySummaryFunction }
 
