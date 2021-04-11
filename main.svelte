@@ -24,6 +24,7 @@ export let OLSKMasterListFilterFieldAutofocus = false;
 import { OLSKLocalized } from 'OLSKInternational';
 import { OLSK_SPEC_UI } from 'OLSKSpec';
 
+export const modPublic = {};
 
 const mod = {
 
@@ -136,6 +137,8 @@ import OLSKCollection from 'OLSKCollection';
 	<slot></slot>
 
 	<OLSKCollection
+		bind:this={ modPublic._OLSKCollection }
+
 		OLSKCollectionItems={ OLSKCollectionItems }
 		OLSKCollectionItemsLocus={ OLSKCollectionItemsLocus }
 		OLSKCollectionIgnoreKeyboard={ !mod.DataIsFocused() }
