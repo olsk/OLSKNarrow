@@ -22,7 +22,8 @@ export let OLSKMasterListFilterFieldClearButton = true;
 export let OLSKMasterListFilterFieldAutofocus = false;
 
 import { OLSKLocalized } from 'OLSKInternational';
-import { OLSK_SPEC_UI } from 'OLSKSpec'
+import { OLSK_SPEC_UI } from 'OLSKSpec';
+
 
 const mod = {
 
