@@ -2,6 +2,7 @@
 export let OLSKCollectionSortFunction;
 export let _OLSKCollectionDispatchKey;
 export let OLSKCollectionChunkFunction = null;
+export let OLSKCollectionItemClass = '';
 
 export let OLSKMasterListFilterText;
 export let OLSKCollectionItems;
@@ -142,6 +143,7 @@ import OLSKCollection from 'OLSKCollection';
 		OLSKCollectionItems={ OLSKCollectionItems }
 		OLSKCollectionItemsLocus={ OLSKCollectionItemsLocus }
 		OLSKCollectionIgnoreKeyboard={ !mod.DataIsFocused() }
+		OLSKCollectionItemClass={ OLSKCollectionItemClass }
 
 		OLSKCollectionSortFunction={ OLSKCollectionSortFunction }
 		_OLSKCollectionDispatchKey={ _OLSKCollectionDispatchKey }
