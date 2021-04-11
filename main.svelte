@@ -10,6 +10,7 @@ export let OLSKCollectionItemsLocus = null;
 export let OLSKCollectionItemAccessibilitySummaryFunction;
 export let OLSKCollectionDispatchClick;
 export let OLSKCollectionDispatchArrow;
+export let OLSKCollectionDispatchStash = null;
 export let OLSKMasterListDispatchFilter;
 export let OLSKMasterListDispatchSubmit = null;
 
@@ -153,6 +154,7 @@ import OLSKCollection from 'OLSKCollection';
 
 		OLSKCollectionDispatchClick={ OLSKCollectionDispatchClick }
 		OLSKCollectionDispatchArrow={ OLSKCollectionDispatchArrow }
+		OLSKCollectionDispatchStash={ OLSKCollectionDispatchStash }
 
 		let:OLSKCollectionItem={ item }
 		>
