@@ -4,7 +4,7 @@ const inputData = Object.assign({
 	_OLSKCollectionDispatchKey: (function () {}),
 	
 	OLSKCollectionItems: [],
-	OLSKMasterListFilterText: '',
+	OLSKNarrowFilterText: '',
 	OLSKCollectionItemAccessibilitySummaryFunction (inputData) {
 		return inputData.TestObjectID.repeat(2);
 	},
@@ -13,15 +13,15 @@ const inputData = Object.assign({
 		window.TestOLSKCollectionDispatchArrow.innerHTML = parseInt(window.TestOLSKCollectionDispatchArrow.innerHTML) + 1;
 		window.TestOLSKCollectionDispatchArrowData.innerHTML = JSON.stringify(inputData);
 	}),
-	OLSKMasterListDispatchFilter: (function  (inputData) {
-		window.TestOLSKMasterListDispatchFilter.innerHTML = parseInt(window.TestOLSKMasterListDispatchFilter.innerHTML) + 1;
-		window.TestOLSKMasterListDispatchFilterData.innerHTML = inputData;
+	OLSKNarrowDispatchFilter: (function  (inputData) {
+		window.TestOLSKNarrowDispatchFilter.innerHTML = parseInt(window.TestOLSKNarrowDispatchFilter.innerHTML) + 1;
+		window.TestOLSKNarrowDispatchFilterData.innerHTML = inputData;
 	}),
-	OLSKMasterListDispatchSubmit: (function  () {
-		window.TestOLSKMasterListDispatchSubmit.innerHTML = parseInt(window.TestOLSKMasterListDispatchSubmit.innerHTML) + 1;
+	OLSKNarrowDispatchSubmit: (function  () {
+		window.TestOLSKNarrowDispatchSubmit.innerHTML = parseInt(window.TestOLSKNarrowDispatchSubmit.innerHTML) + 1;
 	}),
 }, Object.fromEntries(Array.from((new window.URLSearchParams(window.location.search)).entries()).map(function (e, index, coll) {
-	if (['OLSKCollectionItems', 'OLSKCollectionItemsLocus', 'OLSKMasterListFilterFieldClearButton', 'OLSKMasterListFilterFieldAutofocus'].includes(e[0])) {
+	if (['OLSKCollectionItems', 'OLSKCollectionItemsLocus', 'OLSKNarrowFilterFieldClearButton', 'OLSKNarrowFilterFieldAutofocus'].includes(e[0])) {
 		e[1] = JSON.parse(e[1]);
 	}
 
@@ -41,10 +41,10 @@ import Module from './main.svelte';
 	{ ...inputData }
 	let:OLSKCollectionItem
 	>
-	<em slot="OLSKMasterListToolbarHead" id="TestOLSKMasterListToolbarHead">TestOLSKMasterListToolbarHead</em>
-	<em slot="OLSKMasterListToolbarTail" id="TestOLSKMasterListToolbarTail">TestOLSKMasterListToolbarTail</em>
-	<em id="TestOLSKMasterListMain">TestOLSKMasterListMain</em>
+	<em slot="OLSKNarrowToolbarHead" id="TestOLSKNarrowToolbarHead">TestOLSKNarrowToolbarHead</em>
+	<em slot="OLSKNarrowToolbarTail" id="TestOLSKNarrowToolbarTail">TestOLSKNarrowToolbarTail</em>
+	<em id="TestOLSKNarrowMain">TestOLSKNarrowMain</em>
 	<div slot="OLSKCollectionItem" class="TestListItemChild">{ OLSKCollectionItem.TestObjectID }</div>
-	<em slot="OLSKMasterListBodyTail" id="TestOLSKMasterListBodyTail">TestOLSKMasterListBodyTail</em>
+	<em slot="OLSKNarrowBodyTail" id="TestOLSKNarrowBodyTail">TestOLSKNarrowBodyTail</em>
 </Module>
 

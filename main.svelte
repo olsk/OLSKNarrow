@@ -4,24 +4,24 @@ export let _OLSKCollectionDispatchKey;
 export let OLSKCollectionChunkFunction = null;
 export let OLSKCollectionItemClass = '';
 
-export let OLSKMasterListFilterText;
+export let OLSKNarrowFilterText;
 export let OLSKCollectionItems;
 export let OLSKCollectionItemsLocus = null;
 export let OLSKCollectionItemAccessibilitySummaryFunction;
 export let OLSKCollectionDispatchClick;
 export let OLSKCollectionDispatchArrow;
 export let OLSKCollectionDispatchStash = null;
-export let OLSKMasterListDispatchFilter;
-export let OLSKMasterListDispatchSubmit = null;
+export let OLSKNarrowDispatchFilter;
+export let OLSKNarrowDispatchSubmit = null;
 
 export let OLSKMobileViewInactive = false;
 
-export let OLSKMasterListClass = '';
+export let OLSKNarrowClass = '';
 
-export let OLSKMasterListFilterFieldClass = '';
-export let OLSKMasterListFilterFieldPlaceholderText = '';
-export let OLSKMasterListFilterFieldClearButton = true;
-export let OLSKMasterListFilterFieldAutofocus = false;
+export let OLSKNarrowFilterFieldClass = '';
+export let OLSKNarrowFilterFieldPlaceholderText = '';
+export let OLSKNarrowFilterFieldClearButton = true;
+export let OLSKNarrowFilterFieldAutofocus = false;
 
 import { OLSKLocalized } from 'OLSKInternational';
 import { OLSK_SPEC_UI } from 'OLSKSpec';
@@ -37,7 +37,7 @@ const mod = {
 	// DATA
 
 	DataIsFocused () {
-		return document.activeElement === document.querySelector('.OLSKMasterListFilterField');
+		return document.activeElement === document.querySelector('.OLSKNarrowFilterField');
 	},
 
 	DataIsMobile () {
@@ -47,19 +47,19 @@ const mod = {
 	// INTERFACE
 
 	InterfaceFilterFieldDidInput (event) {
-		OLSKMasterListDispatchFilter(this.value);
+		OLSKNarrowDispatchFilter(this.value);
 	},
 
 	InterfaceFormDidSubmit (event) {
 		event.preventDefault();
 
-		OLSKMasterListDispatchSubmit && OLSKMasterListDispatchSubmit();
+		OLSKNarrowDispatchSubmit && OLSKNarrowDispatchSubmit();
 	},
 
 	// MESSAGE
 
 	OLSKInputWrapperDispatchClear () {
-		OLSKMasterListDispatchFilter('');
+		OLSKNarrowDispatchFilter('');
 	},
 
 	// SETUP
@@ -69,11 +69,11 @@ const mod = {
 	},
 
 	SetupFilterFieldEventListeners () {
-		document.querySelector('.OLSKMasterListFilterField').addEventListener('focus', function () {
+		document.querySelector('.OLSKNarrowFilterField').addEventListener('focus', function () {
 			mod._ValueFilterFieldFocused = true;
 		});
 
-		document.querySelector('.OLSKMasterListFilterField').addEventListener('blur', function () {
+		document.querySelector('.OLSKNarrowFilterField').addEventListener('blur', function () {
 			mod._ValueFilterFieldFocused = false;
 		});
 	},
@@ -117,25 +117,25 @@ import OLSKInputWrapper from 'OLSKInputWrapper';
 import OLSKCollection from 'OLSKCollection';
 </script>
 
-<div class="OLSKMasterList OLSKViewportMaster OLSKCommonEdgeRight { OLSKMasterListClass }" class:OLSKMobileViewInactive={ OLSKMobileViewInactive } class:OLSKMasterListFocused={ mod._ValueFilterFieldFocused } aria-hidden={ OLSKMobileViewInactive ? true : null }>
+<div class="OLSKNarrow OLSKViewportMaster OLSKCommonEdgeRight { OLSKNarrowClass }" class:OLSKMobileViewInactive={ OLSKMobileViewInactive } class:OLSKNarrowFocused={ mod._ValueFilterFieldFocused } aria-hidden={ OLSKMobileViewInactive ? true : null }>
 
-<header class="OLSKMasterListToolbar OLSKMobileViewHeader OLSKToolbar OLSKCommonEdgeBottom">
-	<slot name="OLSKMasterListToolbarHead"></slot>
+<header class="OLSKNarrowToolbar OLSKMobileViewHeader OLSKToolbar OLSKCommonEdgeBottom">
+	<slot name="OLSKNarrowToolbarHead"></slot>
 	
-	{#if OLSKMasterListFilterFieldClearButton }
-	<form class="OLSKMasterListForm OLSKToolbarFlexible" on:submit={ mod.InterfaceFormDidSubmit }>
-		<OLSKInputWrapper OLSKInputWrapperValue={ OLSKMasterListFilterFieldClearButton ? OLSKMasterListFilterText : '' } OLSKInputWrapperDispatchClear={ mod.OLSKInputWrapperDispatchClear } >
-			<input class="OLSKMasterListFilterField { OLSKMasterListFilterFieldClass } OLSKDecorInput" placeholder={ OLSKMasterListFilterFieldPlaceholderText || OLSKLocalized('OLSKMasterListFilterFieldText') } autofocus={ OLSKMasterListFilterFieldAutofocus } bind:value={ OLSKMasterListFilterText } on:input={ mod.InterfaceFilterFieldDidInput } />
+	{#if OLSKNarrowFilterFieldClearButton }
+	<form class="OLSKNarrowForm OLSKToolbarFlexible" on:submit={ mod.InterfaceFormDidSubmit }>
+		<OLSKInputWrapper OLSKInputWrapperValue={ OLSKNarrowFilterFieldClearButton ? OLSKNarrowFilterText : '' } OLSKInputWrapperDispatchClear={ mod.OLSKInputWrapperDispatchClear } >
+			<input class="OLSKNarrowFilterField { OLSKNarrowFilterFieldClass } OLSKDecorInput" placeholder={ OLSKNarrowFilterFieldPlaceholderText || OLSKLocalized('OLSKNarrowFilterFieldText') } autofocus={ OLSKNarrowFilterFieldAutofocus } bind:value={ OLSKNarrowFilterText } on:input={ mod.InterfaceFilterFieldDidInput } />
 		</OLSKInputWrapper>
 	</form>
 	{:else}
-		<input class="OLSKMasterListFilterField { OLSKMasterListFilterFieldClass } OLSKDecorInput" placeholder={ OLSKMasterListFilterFieldPlaceholderText || OLSKLocalized('OLSKMasterListFilterFieldText') } autofocus={ OLSKMasterListFilterFieldAutofocus } bind:value={ OLSKMasterListFilterText } on:input={ mod.InterfaceFilterFieldDidInput } />
+		<input class="OLSKNarrowFilterField { OLSKNarrowFilterFieldClass } OLSKDecorInput" placeholder={ OLSKNarrowFilterFieldPlaceholderText || OLSKLocalized('OLSKNarrowFilterFieldText') } autofocus={ OLSKNarrowFilterFieldAutofocus } bind:value={ OLSKNarrowFilterText } on:input={ mod.InterfaceFilterFieldDidInput } />
 	{/if}
 	
-	<slot name="OLSKMasterListToolbarTail"></slot>
+	<slot name="OLSKNarrowToolbarTail"></slot>
 </header>
 
-<section class="OLSKMasterListBody">
+<section class="OLSKNarrowBody">
 	<slot></slot>
 
 	<OLSKCollection
@@ -165,7 +165,7 @@ import OLSKCollection from 'OLSKCollection';
 		</div>
 	</OLSKCollection>
 
-	<slot name="OLSKMasterListBodyTail"></slot>
+	<slot name="OLSKNarrowBodyTail"></slot>
 </section>
 
 </div>

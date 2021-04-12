@@ -1,7 +1,7 @@
 import RollupStart from './stub-view.svelte';
 
-const OLSKMasterList = new RollupStart({
+const OLSKNarrow = new RollupStart({
 	target: document.body,
 });
 
-export default OLSKMasterList;
+export default OLSKNarrow;

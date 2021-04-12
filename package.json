@@ -1,5 +1,5 @@
 {
-  "name": "OLSKMasterList",
+  "name": "OLSKNarrow",
   "main": "main.svelte",
   "dependencies": {
     "OLSKInputWrapper": "olsk/OLSKInputWrapper",
