@@ -163,6 +163,11 @@ import OLSKCollection from 'OLSKCollection';
 				<slot name="OLSKCollectionItem" OLSKCollectionItem={ item }></slot>	
 			{/if}
 		</div>
+		<div slot="OLSKCollectionEmpty">
+			{#if $$slots.OLSKCollectionEmpty}
+				<slot name="OLSKCollectionEmpty"></slot>	
+			{/if}
+		</div>
 	</OLSKCollection>
 
 	<slot name="OLSKNarrowBodyTail"></slot>
