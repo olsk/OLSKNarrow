@@ -2,6 +2,7 @@
 export let OLSKCollectionSortFunction;
 export let _OLSKCollectionDispatchKey;
 export let OLSKCollectionChunkFunction = null;
+export let OLSKCollectionChunkKeySortFunction = null;
 export let OLSKCollectionItemClass = '';
 
 export let OLSKNarrowFilterText;
@@ -149,6 +150,7 @@ import OLSKCollection from 'OLSKCollection';
 		OLSKCollectionSortFunction={ OLSKCollectionSortFunction }
 		_OLSKCollectionDispatchKey={ _OLSKCollectionDispatchKey }
 		OLSKCollectionChunkFunction={ OLSKCollectionChunkFunction }
+		OLSKCollectionChunkKeySortFunction={ OLSKCollectionChunkKeySortFunction }
 
 		OLSKCollectionItemAccessibilitySummaryFunction={ OLSKCollectionItemAccessibilitySummaryFunction }
 
