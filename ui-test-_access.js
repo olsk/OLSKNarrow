@@ -26,39 +26,39 @@ describe('OLSKNarrow_Access', function () {
 	});
 
 	it('shows OLSKNarrow', function () {
-		browser.assert.elements(OLSKNarrow, 1);
+		return browser.assert.elements(OLSKNarrow, 1);
 	});
 
 	it('shows OLSKNarrowToolbar', function () {
-		browser.assert.elements(OLSKNarrowToolbar, 1);
+		return browser.assert.elements(OLSKNarrowToolbar, 1);
 	});
 
 	it('shows OLSKToolbar', function () {
-		browser.assert.elements('.OLSKToolbar', 1);
+		return browser.assert.elements('.OLSKToolbar', 1);
 	});
 
 	it('shows OLSKInputWrapper', function () {
-		browser.assert.elements('.OLSKInputWrapper', 1);
+		return browser.assert.elements('.OLSKInputWrapper', 1);
 	});
 
 	it('shows OLSKInputWrapper', function () {
-		browser.assert.elements('.OLSKInputWrapper', 1);
+		return browser.assert.elements('.OLSKInputWrapper', 1);
 	});
 
 	it('shows OLSKNarrowForm', function () {
-		browser.assert.elements(OLSKNarrowForm, 1);
+		return browser.assert.elements(OLSKNarrowForm, 1);
 	});
 
 	it('shows OLSKNarrowFilterField', function () {
-		browser.assert.elements(OLSKNarrowFilterField, 1);
+		return browser.assert.elements(OLSKNarrowFilterField, 1);
 	});
 
 	it('shows OLSKNarrowBody', function () {
-		browser.assert.elements(OLSKNarrowBody, 1);
+		return browser.assert.elements(OLSKNarrowBody, 1);
 	});
 
 	it('shows OLSKCollection', function () {
-		browser.assert.elements('.OLSKCollection', 1);
+		return browser.assert.elements('.OLSKCollection', 1);
 	});
 
 	context('OLSKNarrowFilterFieldClearButton', function() {
@@ -70,7 +70,7 @@ describe('OLSKNarrow_Access', function () {
 		});
 
 		it('hides OLSKInputWrapper', function () {
-			browser.assert.elements('.OLSKInputWrapper', 0);
+			return browser.assert.elements('.OLSKInputWrapper', 0);
 		});
 		
 	});

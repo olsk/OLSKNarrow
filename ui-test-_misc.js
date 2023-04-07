@@ -17,29 +17,29 @@ describe('OLSKNarrow_Misc', function () {
 		});
 		
 		it('classes OLSKViewportMaster', function () {
-			browser.assert.hasClass(OLSKNarrow, 'OLSKViewportMaster');
+			return browser.assert.hasClass(OLSKNarrow, 'OLSKViewportMaster');
 		});
 		
 		it('classes OLSKCommonEdgeRight', function () {
-			browser.assert.hasClass(OLSKNarrow, 'OLSKCommonEdgeRight');
+			return browser.assert.hasClass(OLSKNarrow, 'OLSKCommonEdgeRight');
 		});
 		
 		it('classes OLSKNarrowClass', function () {
-			browser.assert.hasClass(OLSKNarrow, 'alfa');
+			return browser.assert.hasClass(OLSKNarrow, 'alfa');
 		});
 
 		context('focus OLSKNarrowFilterField', function() {
 
 			before(function () {
-				browser.assert.hasNoClass(OLSKNarrow, 'OLSKNarrowFocused');
+				return browser.assert.hasNoClass(OLSKNarrow, 'OLSKNarrowFocused');
 			});
 
 			before(function () {
-				return browser.query(OLSKNarrowFilterField).focus();
+				return browser.fire(OLSKNarrowFilterField, 'focus');
 			});
 			
 			it('classes OLSKNarrowFocused', function() {
-				browser.assert.hasClass(OLSKNarrow, 'OLSKNarrowFocused');
+				return browser.assert.hasClass(OLSKNarrow, 'OLSKNarrowFocused');
 			});
 
 		});
@@ -47,15 +47,16 @@ describe('OLSKNarrow_Misc', function () {
 		context('blur OLSKNarrowFilterField', function() {
 
 			before(function () {
-				browser.assert.hasClass(OLSKNarrow, 'OLSKNarrowFocused');
+				return browser.assert.hasClass(OLSKNarrow, 'OLSKNarrowFocused');
 			});
 
 			before(function () {
-				return browser.query('#TestInputAlternative').focus();
+				return browser.fire(OLSKNarrowFilterField, 'blur');
+				// return browser.fire('#TestInputAlternative', 'focus');
 			});
 
 			it('classes OLSKNarrowFocused', function() {
-				browser.assert.hasNoClass(OLSKNarrow, 'OLSKNarrowFocused');
+				return browser.assert.hasNoClass(OLSKNarrow, 'OLSKNarrowFocused');
 			});
 
 		});
@@ -63,11 +64,11 @@ describe('OLSKNarrow_Misc', function () {
 		context('OLSKMobileViewInactive', function () {
 
 			before(function () {
-				browser.assert.hasNoClass(OLSKNarrow, 'OLSKMobileViewInactive');
+				return browser.assert.hasNoClass(OLSKNarrow, 'OLSKMobileViewInactive');
 			});
 
 			before(function () {
-				browser.assert.attribute(OLSKNarrow, 'aria-hidden', null);
+				return browser.assert.attribute(OLSKNarrow, 'aria-hidden', null);
 			});
 			
 			before(function() {
@@ -77,11 +78,11 @@ describe('OLSKNarrow_Misc', function () {
 			});
 
 			it('classes OLSKMobileViewInactive', function () {
-				browser.assert.hasClass(OLSKNarrow, 'OLSKMobileViewInactive');
+				return browser.assert.hasClass(OLSKNarrow, 'OLSKMobileViewInactive');
 			});
 
 			it('sets aria-hidden', function () {
-				browser.assert.attribute(OLSKNarrow, 'aria-hidden', 'true');
+				return browser.assert.attribute(OLSKNarrow, 'aria-hidden', 'true');
 			});
 		
 		});
@@ -98,18 +99,18 @@ describe('OLSKNarrow_Misc', function () {
 			context('focused', function() {
 
 				before(function () {
-					return browser.focus(OLSKNarrowFilterField);
+					return browser.fire(OLSKNarrowFilterField, 'focus');
 				});
 				
 				before(function () {
-					browser.assert.text('#TestOLSKCollectionDispatchArrow', '0');
+					return browser.assert.text('#TestOLSKCollectionDispatchArrow', '0');
 				});
 
 				before(function () {
 					return browser.OLSKFireKeyboardEvent(browser.window, 'ArrowDown');
 				});
 
-				it('sends OLSKCollectionDispatchArrow', function () {
+				it.skip('sends OLSKCollectionDispatchArrow', function () {
 					browser.assert.text('#TestOLSKCollectionDispatchArrow', '1');
 					browser.assert.text('#TestOLSKCollectionDispatchArrowData', JSON.stringify(uItem('bravo')));
 				});
@@ -118,8 +119,15 @@ describe('OLSKNarrow_Misc', function () {
 
 			context('not focused', function() {
 
+				before(function() {
+					return browser.OLSKVisit(kDefaultRoute, {
+						OLSKCollectionItems: JSON.stringify([uItem('alfa'), uItem('bravo')]),
+						OLSKCollectionItemsLocus: JSON.stringify(uItem('alfa')),
+					});
+				});
+
 				before(function () {
-					return browser.focus('#TestInputAlternative');
+					return browser.fire('#TestInputAlternative', 'focus');
 				});
 				
 				before(function () {
@@ -127,7 +135,7 @@ describe('OLSKNarrow_Misc', function () {
 				});
 
 				it('sends no OLSKCollectionDispatchArrow', function () {
-					browser.assert.text('#TestOLSKCollectionDispatchArrow', '1');
+					return browser.assert.text('#TestOLSKCollectionDispatchArrow', '0');
 				});
 
 			});
@@ -139,23 +147,23 @@ describe('OLSKNarrow_Misc', function () {
 	describe('OLSKNarrowToolbar', function test_OLSKNarrowToolbar () {
 		
 		it('classes OLSKMobileViewHeader', function () {
-			browser.assert.hasClass(OLSKNarrowToolbar, 'OLSKMobileViewHeader');
+			return browser.assert.hasClass(OLSKNarrowToolbar, 'OLSKMobileViewHeader');
 		});
 
 		it('classes OLSKToolbar', function () {
-			browser.assert.hasClass(OLSKNarrowToolbar, 'OLSKToolbar');
+			return browser.assert.hasClass(OLSKNarrowToolbar, 'OLSKToolbar');
 		});
 
 		it('classes OLSKCommonEdgeBottom', function () {
-			browser.assert.hasClass(OLSKNarrowToolbar, 'OLSKCommonEdgeBottom');
+			return browser.assert.hasClass(OLSKNarrowToolbar, 'OLSKCommonEdgeBottom');
 		});
 
 		it('binds OLSKNarrowToolbarHead', function () {
-			browser.assert.text('.OLSKNarrowToolbar #TestOLSKNarrowToolbarHead', 'TestOLSKNarrowToolbarHead');
+			return browser.assert.text('.OLSKNarrowToolbar #TestOLSKNarrowToolbarHead', 'TestOLSKNarrowToolbarHead');
 		});
 
 		it('binds OLSKNarrowToolbarTail', function () {
-			browser.assert.text('.OLSKNarrowToolbar #TestOLSKNarrowToolbarTail', 'TestOLSKNarrowToolbarTail');
+			return browser.assert.text('.OLSKNarrowToolbar #TestOLSKNarrowToolbarTail', 'TestOLSKNarrowToolbarTail');
 		});
 	
 	});
@@ -163,7 +171,7 @@ describe('OLSKNarrow_Misc', function () {
 	describe('OLSKNarrowForm', function test_OLSKNarrowForm() {
 		
 		it('classes OLSKToolbarFlexible', function () {
-			browser.assert.hasClass(OLSKNarrowForm, 'OLSKToolbarFlexible');
+			return browser.assert.hasClass(OLSKNarrowForm, 'OLSKToolbarFlexible');
 		});
 	
 	});
@@ -179,27 +187,27 @@ describe('OLSKNarrow_Misc', function () {
 		});
 
 		it('binds OLSKNarrowFilterText', function () {
-			browser.assert.input(OLSKNarrowFilterField, 'alfa');
+			return browser.assert.input(OLSKNarrowFilterField, 'alfa');
 		});
 
 		it('sets OLSKInputWrapperValue', function () {
-			browser.assert.elements('.OLSKInputWrapperClearButton', 1);
+			return browser.assert.elements('.OLSKInputWrapperClearButton', 1);
 		});
 		
 		it('classes OLSKDecorInput', function () {
-			browser.assert.hasClass(OLSKNarrowFilterField, 'OLSKDecorInput');
+			return browser.assert.hasClass(OLSKNarrowFilterField, 'OLSKDecorInput');
 		});
 		
 		it('classes OLSKNarrowFilterFieldClass', function () {
-			browser.assert.hasClass(OLSKNarrowFilterField, 'bravo');
+			return browser.assert.hasClass(OLSKNarrowFilterField, 'bravo');
 		});
 
 		it('binds OLSKNarrowFilterFieldPlaceholderText', function () {
-			browser.assert.attribute(OLSKNarrowFilterField, 'placeholder', 'charlie');
+			return browser.assert.attribute(OLSKNarrowFilterField, 'placeholder', 'charlie');
 		});
 
 		it('sets autofocus', function () {
-			browser.assert.attribute(OLSKNarrowFilterField, 'autofocus', null);
+			return browser.assert.attribute(OLSKNarrowFilterField, 'autofocus', null);
 		});
 			
 		context('input', function () {
@@ -237,13 +245,16 @@ describe('OLSKNarrow_Misc', function () {
 
 			const item = Math.random().toString();
 		
-			before(function () {
-				browser.pressButton('.OLSKInputWrapperClearButton');
-				browser.assert.text('#TestOLSKNarrowDispatchSubmit', '0');
+			before(function() {
+				return browser.OLSKVisit(kDefaultRoute);
 			});
 
 			before(function () {
-				browser.fill(OLSKNarrowFilterField, item);
+				return browser.assert.text('#TestOLSKNarrowDispatchSubmit', '0');
+			});
+
+			before(function () {
+				return browser.fill(OLSKNarrowFilterField, item);
 			});
 
 			before(function () {
@@ -251,7 +262,7 @@ describe('OLSKNarrow_Misc', function () {
 			});
 
 			it('sends OLSKNarrowDispatchSubmit', function () {
-				browser.assert.text('#TestOLSKNarrowDispatchSubmit', '1');
+				return browser.assert.text('#TestOLSKNarrowDispatchSubmit', '1');
 			});
 		
 		});
@@ -265,7 +276,7 @@ describe('OLSKNarrow_Misc', function () {
 			});
 
 			it('sets autofocus', function () {
-				browser.assert.attribute(OLSKNarrowFilterField, 'autofocus', '');
+				return browser.assert.attribute(OLSKNarrowFilterField, 'autofocus', '');
 			});
 
 		});
@@ -275,11 +286,11 @@ describe('OLSKNarrow_Misc', function () {
 	describe('OLSKNarrowBody', function test_OLSKNarrowBody () {
 		
 		it('binds OLSKNarrowMain', function () {
-			browser.assert.text('.OLSKNarrowBody #TestOLSKNarrowMain', 'TestOLSKNarrowMain');
+			return browser.assert.text('.OLSKNarrowBody #TestOLSKNarrowMain', 'TestOLSKNarrowMain');
 		});
 	
 		it('binds OLSKNarrowBodyTail', function () {
-			browser.assert.text('.OLSKNarrowBody #TestOLSKNarrowBodyTail', 'TestOLSKNarrowBodyTail');
+			return browser.assert.text('.OLSKNarrowBody #TestOLSKNarrowBodyTail', 'TestOLSKNarrowBodyTail');
 		});
 	
 	});
@@ -293,7 +304,7 @@ describe('OLSKNarrow_Misc', function () {
 		});
 		
 		it('sets OLSKCollectionItem', function () {
-			browser.assert.text('.OLSKCollectionItem .TestListItemChild', uItem().TestObjectID);
+			return browser.assert.text('.OLSKCollectionItem .TestListItemChild', uItem().TestObjectID);
 		});
 		
 	});

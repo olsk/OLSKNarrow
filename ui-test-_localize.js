@@ -15,7 +15,7 @@ kDefaultRoute.OLSKRouteLanguageCodes.forEach(function (OLSKRoutingLanguage) {
 		});
 
 		it('localizes OLSKNarrowFilterField', function () {
-			browser.assert.attribute(OLSKNarrowFilterField, 'placeholder', uLocalized('OLSKNarrowFilterFieldText'));
+			return browser.assert.attribute(OLSKNarrowFilterField, 'placeholder', uLocalized('OLSKNarrowFilterFieldText'));
 		});
 
 	});
